@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bggradient2"
-    >
+>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="@dimen/_50sdp"
@@ -21,15 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <ImageView
-            android:id="@+id/imageView2"
-            android:cropToPadding="true"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bgheart"
-            />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/loutmain"
             android:layout_width="match_parent"
@@ -47,8 +39,18 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/TitleLarge"
-                    android:text="Đăng ký"
+
+                    android:text="Cập nhật"
                     />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imavatar"
+                    android:layout_gravity="center"
+                    android:src="@drawable/avatar"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+
+                    />
+
                 <EditText
                     android:id="@+id/edtusername"
                     style="@style/edtstyle"
@@ -71,16 +73,25 @@
 
                     android:hint="Mật khẩu"
                     android:inputType="textPassword" />
-
-
-
-
+                <EditText
+                    android:id="@+id/edtRepassword"
+                    style="@style/edtstyle"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:hint="Nhập lại mật khẩu"
+                    android:inputType="textPassword" />
                 <Button
 
-                    android:id="@+id/btnRegister"
+                    android:id="@+id/btnUpdate"
                     android:layout_marginTop="@dimen/_10sdp"
                     style="@style/btnPrimaryMedium"
-                    android:text="Đăng ký"
+                    android:text="Cập nhật"
+                   />
+                <Button
+
+                    android:id="@+id/btnSignOut"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    style="@style/btnPrimaryMedium"
+                    android:text="Đăng xuất"
                     />
 
             </LinearLayout>

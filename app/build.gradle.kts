@@ -54,7 +54,9 @@ dependencies {
     implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
     implementation ("com.airbnb.android:lottie:3.4.0")
     implementation ("com.intuit.sdp:sdp-android:1.1.1")
-
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 
 }
