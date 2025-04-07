@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">AndroidLanAnh</string>
+    <string name="gcm_defaultSenderId" translatable="false">632965072495</string>
+    <string name="google_api_key" translatable="false">AIzaSyB1baDB4UrmElIEMx7LVsJQgz0T1Y-3tNk</string>
+    <string name="google_app_id" translatable="false">1:632965072495:android:1501ac2a7173bab87fef9a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB1baDB4UrmElIEMx7LVsJQgz0T1Y-3tNk</string>
+    <string name="google_storage_bucket" translatable="false">android-2f9db.firebasestorage.app</string>
+    <string name="project_id" translatable="false">android-2f9db</string>
+    <style name="Base.Theme.AndroidLanAnh" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.AndroidLanAnh" parent="Base.Theme.AndroidLanAnh"/>
+</resources>
