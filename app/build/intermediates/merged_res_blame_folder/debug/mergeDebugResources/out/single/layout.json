@@ -1,6 +1,14 @@
 [
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-41:/layout/activity_main.xml",
-        "source": "com.example.androidlananh.app-main-44:/layout/activity_main.xml"
+        "merged": "com.example.androidlananh.app-mergeDebugResources-53:/layout/activity_main.xml",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-mergeDebugResources-53:/layout/activity_sign_in.xml",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-mergeDebugResources-53:/layout/activity_sign_up.xml",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_sign_up.xml"
     }
 ]

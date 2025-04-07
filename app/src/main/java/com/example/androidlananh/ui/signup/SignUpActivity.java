@@ -48,7 +48,7 @@ public class SignUpActivity extends BaseActivity<SignUpPresenter> implements Sig
 
     @Override
     public void showLoading() {
-
+        
     }
 
     @Override

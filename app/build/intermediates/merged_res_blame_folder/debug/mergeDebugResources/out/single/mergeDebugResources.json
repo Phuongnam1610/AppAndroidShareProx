@@ -1,70 +1,154 @@
 [
     {
-        "merged": "com.example.androidlananh.app-debug-42:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/font_sfu1.TTF.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/sfu1.TTF"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_avatar.png.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/avatar.png"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/xml/data_extraction_rules.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/xml_backup_rules.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/xml/backup_rules.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/raw_loading2.json.flat",
+        "source": "com.example.androidlananh.app-resValues-51:/raw/loading2.json"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/layout_activity_main.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/layout/activity_main.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/font_productsans.otf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/productsans.otf"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_bggradient.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/bggradient.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/font_dfvn.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/dfvn.ttf"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_bggradient2.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/bggradient2.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_bgedt.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/bgedt.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/font_blenda.otf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/blenda.otf"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.androidlananh.app-debug-42:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.androidlananh.app-main-44:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.androidlananh.app-debug-54:/font_uvf.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/uvf.ttf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_ahamono.otf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/ahamono.otf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_htl2.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/htl2.ttf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/drawable_bgheart.png.flat",
+        "source": "com.example.androidlananh.app-main-56:/drawable/bgheart.png"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_gothiclight.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/gothiclight.ttf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_htl.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/htl.ttf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_comic.otf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/comic.otf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_gothicregular.ttf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/gothicregular.ttf"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/layout_activity_sign_up.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/layout_activity_main.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.androidlananh.app-main-56:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/layout_activity_sign_in.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/xml_backup_rules.xml.flat",
+        "source": "com.example.androidlananh.app-main-56:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_sfu2.TTF.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/sfu2.TTF"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-54:/font_thecat.otf.flat",
+        "source": "com.example.androidlananh.app-main-56:/font/thecat.otf"
     }
 ]
