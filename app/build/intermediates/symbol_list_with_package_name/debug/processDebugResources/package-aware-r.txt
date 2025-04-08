@@ -312,6 +312,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearsTag
 attr clickAction
 attr clockFaceBackgroundColor
@@ -3696,6 +3700,7 @@ drawable bgedt
 drawable bggradient
 drawable bggradient2
 drawable bgheart
+drawable bottom_nav_colors
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3732,6 +3737,7 @@ drawable fingerprint_dialog_error
 drawable fingerprint_dialog_fp_icon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable home
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3815,6 +3821,7 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable notif
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -3828,9 +3835,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable plus
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user
 font ahamono
 font blenda
 font comic
@@ -3944,6 +3953,7 @@ id bestChoice
 id blocking
 id bottom
 id bottom_left
+id bottom_navigation
 id bottom_right
 id bounce
 id bounceBoth
@@ -3954,6 +3964,12 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnBack
+id btnReceive
+id btnRegister
+id btnShare
+id btnSignOut
+id btnUpdate
 id btnforgot
 id btnlogin
 id btnregister
@@ -4033,8 +4049,11 @@ id east
 id edge
 id edit_query
 id edit_text_id
-id edtemail
-id edtpassword
+id edtEmail
+id edtInfo
+id edtPassword
+id edtRepassword
+id edtUserName
 id elastic
 id embed
 id end
@@ -4072,6 +4091,7 @@ id give_us_a_review_landmine_button
 id give_us_a_review_landmine_main_layout
 id give_us_a_review_landmine_text_1
 id give_us_a_review_landmine_text_2
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -4094,7 +4114,9 @@ id ignore
 id ignoreRequest
 id image
 id imageView2
+id imavatar
 id immediateStop
+id imvProduct
 id included
 id indeterminate
 id info
@@ -4117,6 +4139,7 @@ id listMode
 id list_item
 id lottie_layer_name
 id loutmain
+id loutregister
 id m3_side_sheet
 id main
 id marquee
@@ -4311,6 +4334,10 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tab_home
+id tab_notif
+id tab_plus
+id tab_user
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -4499,8 +4526,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_profile
 layout activity_sign_in
 layout activity_sign_up
+layout activity_up_post
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -4521,6 +4550,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dp_example
 layout fingerprint_dialog_layout
+layout fragment_home
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -4585,6 +4615,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -5349,6 +5380,7 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_BottomNavigationView_ActiveIndicator
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light
@@ -5546,6 +5578,7 @@ style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style TitleLarge
+style TitleMedium
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -5923,7 +5956,7 @@ style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style btnPrimaryMedium
-style button
+style btnSecondaryMedium
 style edtstyle
 style textPrimaryMedium
 style tvmain
@@ -5962,6 +5995,7 @@ styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carou
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize

@@ -7,16 +7,7 @@
     android:orientation="vertical"
     android:background="@drawable/bggradient2"
     >
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:visibility="visible"
-        android:layout_gravity="center"
 
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/loading2" />
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -60,7 +51,7 @@
                         />
 
                     <EditText
-                        android:id="@+id/edtemail"
+                        android:id="@+id/edtEmail"
                         style="@style/edtstyle"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:hint="Email"
@@ -68,7 +59,7 @@
 
                     <EditText
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:id="@+id/edtpassword"
+                        android:id="@+id/edtPassword"
                         style="@style/edtstyle"
                         android:hint="Password"
                         android:inputType="textPassword"
@@ -109,6 +100,16 @@
         </LinearLayout>
 
     </LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading2" />
 
 
 

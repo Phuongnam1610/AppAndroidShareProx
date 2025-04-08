@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.androidlananh.app-mergeDebugResources-52:/values-lv/values-lv.xml",
+            "outputFile": "com.example.androidlananh.app-mergeDebugResources-54:/values-lv/values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\8.11.1\\transforms\\1739abd24fa156bf686c743aca1b60bb\\transformed\\biometric-1.1.0\\res\\values-lv\\values-lv.xml",

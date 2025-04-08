@@ -1,6 +1,8 @@
 package com.example.androidlananh.ui.signin;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -9,10 +11,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.androidlananh.databinding.ActivityMainBinding;
+import com.example.androidlananh.databinding.ActivitySignInBinding;
 import com.example.androidlananh.ui.base.BaseActivity;
+import com.example.androidlananh.ui.main.MainActivity;
 
 public class SignInActivity extends BaseActivity<SignInPresenter> implements SignInView {
-    private ActivityMainBinding binding;
+    private ActivitySignInBinding binding;
 
     @NonNull
     @Override
@@ -23,11 +27,17 @@ public class SignInActivity extends BaseActivity<SignInPresenter> implements Sig
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setupEdgeToEdge();
         setupWindowInsets();
-
+        binding.btnlogin.setOnClickListener(v -> {
+            String email=binding.edtEmail.getText().toString();
+            String password=binding.edtPassword.getText().toString();
+            presenter.signIn(email,password);
+        });
+        binding.btnregister.setOnClickListener(v -> {});
+        binding.btnforgot.setOnClickListener(v -> {});
     }
 
 
@@ -47,11 +57,19 @@ public class SignInActivity extends BaseActivity<SignInPresenter> implements Sig
 
     @Override
     public void showLoading() {
-
+        binding.animationView.setVisibility(View.VISIBLE);
+        binding.btnlogin.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void hideLoading() {
+        binding.animationView.setVisibility(View.GONE);
+        binding.btnlogin.setVisibility(View.VISIBLE);
+    }
 
+    @Override
+    public void onSignInSuccess() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.androidlananh.app-mergeDebugResources-52:/values-hr/values-hr.xml",
+            "outputFile": "com.example.androidlananh.app-mergeDebugResources-54:/values-hr/values-hr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\8.11.1\\transforms\\eb4600280362ad8597dfdac8cead8a0f\\transformed\\core-1.15.0\\res\\values-hr\\values-hr.xml",

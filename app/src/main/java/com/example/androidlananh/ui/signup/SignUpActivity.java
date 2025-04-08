@@ -1,8 +1,14 @@
 package com.example.androidlananh.ui.signup;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -11,10 +17,30 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.androidlananh.databinding.ActivityMainBinding;
 import com.example.androidlananh.databinding.ActivitySignUpBinding;
 import com.example.androidlananh.ui.base.BaseActivity;
+import com.example.androidlananh.ui.main.MainActivity;
 
 public class SignUpActivity extends BaseActivity<SignUpPresenter> implements SignUpView {
     private ActivitySignUpBinding binding;
+    private ActivityResultLauncher<Intent> imagePickerLauncher;
+    private Uri selectedImageUri;
 
+    private void setupImagePicker() {
+        imagePickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Uri selectedImageUri = result.getData().getData();
+                        if (selectedImageUri != null) {
+                        }
+                    }
+                }
+        );
+    }
+
+    public void openImagePicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        imagePickerLauncher.launch(intent);
+    }
     @NonNull
     @Override
     protected SignUpPresenter createPresenter() {
@@ -28,6 +54,14 @@ public class SignUpActivity extends BaseActivity<SignUpPresenter> implements Sig
         setContentView(binding.getRoot());
         setupEdgeToEdge();
         setupWindowInsets();
+        setupImagePicker();
+        binding.btnRegister.setOnClickListener(v -> {
+            String email=binding.edtEmail.getText().toString();
+            String password=binding.edtPassword.getText().toString();
+            String userName=binding.edtUserName.getText().toString();
+            presenter.signUp(email,password,userName);
+        });
+        
 
     }
 
@@ -48,16 +82,24 @@ public class SignUpActivity extends BaseActivity<SignUpPresenter> implements Sig
 
     @Override
     public void showLoading() {
-        
+        binding.animationView.setVisibility(View.VISIBLE);
+        binding.btnRegister.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        binding.animationView.setVisibility(View.GONE);
+        binding.btnRegister.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void onSignUpSuccess() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
+
+    @Override
+    public void displayAvatarUri(Uri imageUri) {
 
     }
 }

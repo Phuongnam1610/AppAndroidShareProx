@@ -13,7 +13,7 @@ public abstract class BaseActivity<Presenter extends BasePresenter> extends AppC
     @Override
     public void showError(String error) {
         Toast.makeText(this,error,LENGTH_SHORT).show();
-
+        hideLoading();
     }
 
     protected Presenter presenter;

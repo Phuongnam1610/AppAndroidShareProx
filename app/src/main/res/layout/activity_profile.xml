@@ -52,14 +52,14 @@
                     />
 
                 <EditText
-                    android:id="@+id/edtusername"
+                    android:id="@+id/edtUserName"
                     style="@style/edtstyle"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:hint="Tên người dùng"
                     android:inputType="text" />
 
                 <EditText
-                    android:id="@+id/edtemail"
+                    android:id="@+id/edtEmail"
                     style="@style/edtstyle"
                     android:layout_marginTop="@dimen/_10sdp"
 

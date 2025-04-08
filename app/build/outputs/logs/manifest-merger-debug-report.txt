@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [androidx.databinding:viewbinding:8.9.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\39f25089e19be670807d6c64d60b95f5\transformed\viewbinding-8.9.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.ibrahimsn98:SmoothBottomBar:1.7.9] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\157b5ad5a0ac28c5b468a1c1aa1cb64e\transformed\SmoothBottomBar-1.7.9\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\511c21b91f9a385847a437de61c4f58d\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
@@ -18,6 +18,7 @@ MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.1] C:\U
 MERGED from [androidx.credentials:credentials:1.5.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e65b5948217cf0b9a2808ca54d2ed2a0\transformed\credentials-1.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\1739abd24fa156bf686c743aca1b60bb\transformed\biometric-1.1.0\AndroidManifest.xml:17:1-29:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\aebc542046ec0de81f0e3f131d5d2ad7\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9ac791cabf10b8ac2c486d8e73ed099d\transformed\glide-4.12.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\a689fbbc7df1e02557666e9ac247de49\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4e854152ba3a59627ec2eeabc06393f3\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\2aea2af7c93b79275e2e8526eee41add\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:2:1-18:12
@@ -74,11 +75,14 @@ MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Admi
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\3116049acfccbd14da88efce568b49d2\transformed\fragment-1.5.7\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\061316d934343dadac7fa8d6797cf6d7\transformed\activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.intuit.sdp:sdp-android:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\c32c8e989d0f5405addb9dec7c8f51b7\transformed\sdp-android-1.1.1\AndroidManifest.xml:2:1-9:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6be65ef9876c66d803b64bccec86646f\transformed\circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\018de80e7df3640aacb85a6e894641f5\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\59e97d3fe8059b043df2491be9cd0d7e\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6131588fa03523f56ccd486835f41390\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\c40a006dcc88c39173e1c2d33e4a818f\transformed\firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b3938fdf1e9051348798683087b00361\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b2f2e184191f39474648b09bbdd750ab\transformed\gifdecoder-4.12.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\24e28193832524fe1dbb1907bcd64e99\transformed\exifinterface-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\69b300234c33225d65e0482886abb4ab\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\590e93d5e51d2670c14df46c8a5da756\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\d5b8ea9cfd894b5378d9e47a7532ac74\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
@@ -100,9 +104,17 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Administrator\.
 		INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:4:22-77
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:6:22-73
 application
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:5:5-29:19
-INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:5:5-29:19
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:8:5-36:19
+INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:8:5-36:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\ffc43b6a99d90e043fd0f344168d427e\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\ffc43b6a99d90e043fd0f344168d427e\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b9dc40b3008d388cef9df7e5a90b732a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -113,6 +125,8 @@ MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.g
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6fa12f547b9644253e50de80b2c66878\transformed\firebase-auth-23.2.0\AndroidManifest.xml:28:5-73:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.5.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\5da26f55da90144eaa3f75d19ca65890\transformed\credentials-play-services-auth-1.5.0\AndroidManifest.xml:23:5-50:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.5.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\5da26f55da90144eaa3f75d19ca65890\transformed\credentials-play-services-auth-1.5.0\AndroidManifest.xml:23:5-50:19
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9ac791cabf10b8ac2c486d8e73ed099d\transformed\glide-4.12.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9ac791cabf10b8ac2c486d8e73ed099d\transformed\glide-4.12.0\AndroidManifest.xml:10:5-20
 MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4e854152ba3a59627ec2eeabc06393f3\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4e854152ba3a59627ec2eeabc06393f3\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\2aea2af7c93b79275e2e8526eee41add\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
@@ -143,8 +157,12 @@ MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Adminis
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\1467f57fe9e3283fec28c36ca10c5ec7\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\19dc16bad0d59a68ca70b314e431227a\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\19dc16bad0d59a68ca70b314e431227a\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6be65ef9876c66d803b64bccec86646f\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6be65ef9876c66d803b64bccec86646f\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6131588fa03523f56ccd486835f41390\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6131588fa03523f56ccd486835f41390\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b2f2e184191f39474648b09bbdd750ab\transformed\gifdecoder-4.12.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b2f2e184191f39474648b09bbdd750ab\transformed\gifdecoder-4.12.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\69b300234c33225d65e0482886abb4ab\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\69b300234c33225d65e0482886abb4ab\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\a9be16677621f2c00f53d51fae4b2cac\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -156,45 +174,51 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Administrator\.
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\eb4600280362ad8597dfdac8cead8a0f\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:8:9-54
-	android:roundIcon
 		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:11:9-54
+	android:roundIcon
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:14:9-54
 	tools:targetApi
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:14:9-29
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:17:9-29
 	android:icon
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:13:9-51
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:16:9-51
 	android:dataExtractionRules
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:7:9-65
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:10:9-65
 activity#com.example.androidlananh.ui.main.MainActivity
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:15:9-18:20
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:18:9-21:20
 	android:exported
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:17:13-36
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:16:13-49
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:19:13-49
 activity#com.example.androidlananh.ui.signup.SignUpActivity
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:19:9-27:20
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:22:9-25:20
 	android:exported
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:20:13-53
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:23:13-53
+activity#com.example.androidlananh.ui.signin.SignInActivity
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:26:9-34:20
+	android:exported
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:27:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:32:27-74
 uses-sdk
 INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml
@@ -227,6 +251,8 @@ MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\
 MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\1739abd24fa156bf686c743aca1b60bb\transformed\biometric-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\aebc542046ec0de81f0e3f131d5d2ad7\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\aebc542046ec0de81f0e3f131d5d2ad7\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9ac791cabf10b8ac2c486d8e73ed099d\transformed\glide-4.12.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9ac791cabf10b8ac2c486d8e73ed099d\transformed\glide-4.12.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\a689fbbc7df1e02557666e9ac247de49\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\a689fbbc7df1e02557666e9ac247de49\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4e854152ba3a59627ec2eeabc06393f3\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:6:5-44
@@ -339,6 +365,8 @@ MERGED from [androidx.activity:activity:1.8.0] C:\Users\Administrator\.gradle\ca
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\061316d934343dadac7fa8d6797cf6d7\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
 MERGED from [com.intuit.sdp:sdp-android:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\c32c8e989d0f5405addb9dec7c8f51b7\transformed\sdp-android-1.1.1\AndroidManifest.xml:7:5-44
 MERGED from [com.intuit.sdp:sdp-android:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\c32c8e989d0f5405addb9dec7c8f51b7\transformed\sdp-android-1.1.1\AndroidManifest.xml:7:5-44
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6be65ef9876c66d803b64bccec86646f\transformed\circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\6be65ef9876c66d803b64bccec86646f\transformed\circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\018de80e7df3640aacb85a6e894641f5\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\018de80e7df3640aacb85a6e894641f5\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\59e97d3fe8059b043df2491be9cd0d7e\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
@@ -349,6 +377,10 @@ MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\Administra
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\c40a006dcc88c39173e1c2d33e4a818f\transformed\firebase-components-18.0.0\AndroidManifest.xml:18:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b3938fdf1e9051348798683087b00361\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b3938fdf1e9051348798683087b00361\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b2f2e184191f39474648b09bbdd750ab\transformed\gifdecoder-4.12.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\b2f2e184191f39474648b09bbdd750ab\transformed\gifdecoder-4.12.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\24e28193832524fe1dbb1907bcd64e99\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\24e28193832524fe1dbb1907bcd64e99\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\69b300234c33225d65e0482886abb4ab\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\69b300234c33225d65e0482886abb4ab\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\590e93d5e51d2670c14df46c8a5da756\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
