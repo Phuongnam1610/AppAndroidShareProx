@@ -70,7 +70,6 @@
                     android:id="@+id/edtPassword"
                     style="@style/edtstyle"
                     android:layout_marginTop="@dimen/_10sdp"
-
                     android:hint="Mật khẩu"
                     android:inputType="textPassword" />
                 <EditText
@@ -80,7 +79,6 @@
                     android:hint="Nhập lại mật khẩu"
                     android:inputType="textPassword" />
                 <Button
-
                     android:id="@+id/btnUpdate"
                     android:layout_marginTop="@dimen/_10sdp"
                     style="@style/btnPrimaryMedium"
