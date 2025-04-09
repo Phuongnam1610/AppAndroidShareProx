@@ -1,8 +1,7 @@
 package com.example.androidlananh.ui.main;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -15,10 +14,16 @@ import com.example.androidlananh.R;
 import com.example.androidlananh.databinding.ActivityMainBinding;
 import com.example.androidlananh.ui.base.BaseActivity;
 import com.example.androidlananh.ui.fragments.home.HomeFragment;
-import com.google.android.material.navigation.NavigationBarView;
+import com.example.androidlananh.ui.fragments.user.UserFragment;
+import com.example.androidlananh.ui.uppost.UpPostActivity;
+import com.example.androidlananh.utils.SessionManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainView {
     private ActivityMainBinding binding;
+    private Fragment currentFragment;
 
     @NonNull
     @Override
@@ -29,19 +34,23 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SessionManager.getInstance().signIn("nam@gmail.com", "123456", new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+            }
+        });
         initializeViewBinding();
         setupEdgeToEdge();
         setupWindowInsets();
-        getSupportFragmentManager().beginTransaction().replace(binding.fragment.getId(), new HomeFragment()).commit();
-
+        replaceFragment(new HomeFragment());
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
-            Fragment fragment;
             if (item.getItemId() == R.id.tab_home) {
-                getSupportFragmentManager().beginTransaction().replace(binding.fragment.getId(), new HomeFragment()).commit();
-
+                replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.tab_plus) {
-            } else if (item.getItemId() == R.id.tab_notif) {
+                startActivity(new Intent(this, UpPostActivity.class));
             } else if (item.getItemId() == R.id.tab_user) {
+                replaceFragment(new UserFragment());
             } else {
             }
             return true;
@@ -78,6 +87,22 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     public void hideLoading() {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (currentFragment instanceof HomeFragment) {
+            binding.bottomNavigation.setSelectedItemId(R.id.tab_home);
+        } else if (currentFragment instanceof UserFragment) {
+            binding.bottomNavigation.setSelectedItemId(R.id.tab_user);
+        }
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        currentFragment = fragment;
+        getSupportFragmentManager().beginTransaction().replace(binding.fragment.getId(), currentFragment).commit();
 
     }
 }

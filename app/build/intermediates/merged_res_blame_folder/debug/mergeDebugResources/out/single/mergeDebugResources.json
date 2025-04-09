@@ -32,12 +32,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_sign_in.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_plus.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\plus.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_plus.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\plus.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_item_product.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\item_product.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_notif.xml.flat",
@@ -50,10 +54,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_bgedt.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\bgedt.xml"
-    },
-    {
-        "merged": "com.example.androidlananh.app-debug-56:/menu_menu.xml.flat",
-        "source": "com.example.androidlananh.app-main-58:/menu/menu.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_ic_launcher_background.xml.flat",
@@ -76,12 +76,20 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_logout.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\logout.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_htl2.ttf.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\htl2.ttf"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_activity_detail_product.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_detail_product.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_activity_main.xml.flat",
@@ -92,12 +100,20 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\user.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_thecat.otf.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\thecat.otf"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_setting.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\setting.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_bottom_nav_colors.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\bottom_nav_colors.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_fragment_user.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\fragment_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_thecat.otf.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\thecat.otf"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -106,6 +122,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_bggradient.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\bggradient.xml"
+    },
+    {
+        "merged": "com.example.androidlananh.app-debug-56:/layout_activity_detail_product.xml.flat",
+        "source": "com.example.androidlananh.app-main-58:/layout/activity_detail_product.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\xml_backup_rules.xml.flat",
@@ -120,16 +140,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\raw\\loading2.json"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_comic.otf.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\comic.otf"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_gothiclight.ttf.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\gothiclight.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_ahamono.otf.flat",
@@ -142,6 +162,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_defaultava.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\defaultava.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_activity_profile.xml.flat",
@@ -168,12 +192,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_activity_sign_up.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_dfvn.ttf.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\font\\dfvn.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\font_productsans.otf.flat",

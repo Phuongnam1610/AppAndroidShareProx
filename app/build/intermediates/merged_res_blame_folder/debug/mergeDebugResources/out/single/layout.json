@@ -1,26 +1,42 @@
 [
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_main.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\fragment_user.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\fragment_user.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_sign_in.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/activity_sign_in.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_profile.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_profile.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/activity_profile.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_sign_up.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/activity_sign_up.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\item_product.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\item_product.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/fragment_home.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/fragment_home.xml"
+        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_detail_product.xml",
+        "source": "com.example.androidlananh.app-main-58:/layout/activity_detail_product.xml"
     },
     {
-        "merged": "com.example.androidlananh.app-mergeDebugResources-55:/layout/activity_up_post.xml",
-        "source": "com.example.androidlananh.app-main-58:/layout/activity_up_post.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_detail_product.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_detail_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_sign_in.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_sign_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_up_post.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_up_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-mergeDebugResources-55:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\layout\\activity_main.xml"
     }
 ]

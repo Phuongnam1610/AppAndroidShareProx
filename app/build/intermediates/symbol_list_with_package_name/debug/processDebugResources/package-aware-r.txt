@@ -3728,6 +3728,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable defaultava
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3761,6 +3762,7 @@ drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
 drawable ic_search_black_24
+drawable logout
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3836,6 +3838,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
+drawable setting
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3965,6 +3968,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnBack
+id btnPost
 id btnReceive
 id btnRegister
 id btnShare
@@ -3972,7 +3976,9 @@ id btnSignOut
 id btnUpdate
 id btnforgot
 id btnlogin
+id btnlogout
 id btnregister
+id btnsetting
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -4049,10 +4055,14 @@ id east
 id edge
 id edit_query
 id edit_text_id
+id edtDescription
 id edtEmail
-id edtInfo
+id edtFind
+id edtName
+id edtNumber
 id edtPassword
 id edtRepassword
+id edtUnit
 id edtUserName
 id elastic
 id embed
@@ -4115,7 +4125,9 @@ id ignoreRequest
 id image
 id imageView2
 id imavatar
+id imguser
 id immediateStop
+id imvAvatarUser
 id imvProduct
 id included
 id indeterminate
@@ -4135,6 +4147,7 @@ id light
 id line1
 id line3
 id linear
+id linearuser
 id listMode
 id list_item
 id lottie_layer_name
@@ -4260,6 +4273,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rcvPost
 id rectangles
 id report_drawn
 id restart
@@ -4335,7 +4349,6 @@ id submit_area
 id supportScrollUp
 id tabMode
 id tab_home
-id tab_notif
 id tab_plus
 id tab_user
 id tag_accessibility_actions
@@ -4385,6 +4398,11 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDescription
+id tvName
+id tvNameProduct
+id tvNameUser
+id tvuser
 id unchecked
 id uniform
 id unlabeled
@@ -4525,6 +4543,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_detail_product
 layout activity_main
 layout activity_profile
 layout activity_sign_in
@@ -4551,8 +4570,10 @@ layout design_text_input_start_icon
 layout dp_example
 layout fingerprint_dialog_layout
 layout fragment_home
+layout fragment_user
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_product
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -5959,6 +5980,7 @@ style btnPrimaryMedium
 style btnSecondaryMedium
 style edtstyle
 style textPrimaryMedium
+style textPrimarySmall
 style tvmain
 style tvmain2
 style tvquotes

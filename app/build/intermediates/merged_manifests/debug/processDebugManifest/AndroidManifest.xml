@@ -45,6 +45,10 @@
             android:exported="true" >
         </activity>
         <activity
+            android:name="com.example.androidlananh.ui.profile.ProfileActivity"
+            android:exported="true" >
+        </activity>
+        <activity
             android:name="com.example.androidlananh.ui.signin.SignInActivity"
             android:exported="true" >
             <intent-filter>
@@ -52,6 +56,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.androidlananh.ui.uppost.UpPostActivity"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name="com.example.androidlananh.ui.detailproduct.DetailProductActivity"
+            android:exported="true" >
         </activity>
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"

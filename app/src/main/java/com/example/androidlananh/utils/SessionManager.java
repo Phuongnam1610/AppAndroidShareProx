@@ -1,9 +1,9 @@
 package com.example.androidlananh.utils;
 
 import com.example.androidlananh.model.User;
+import com.example.androidlananh.repository.ApiCallback;
 import com.example.androidlananh.repository.UserRepository;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,7 +13,7 @@ public class SessionManager {
     private static SessionManager instance;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
-    private User currentUser;
+    public  User currentUser;
     private UserRepository userRepository;
 
     private SessionManager() {
@@ -33,18 +33,19 @@ public class SessionManager {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        userRepository.getUserById(getAuthUser().getUid(), new UserRepository.OnUserFetchedListener() {
+                        userRepository.getUserById(getAuthUser().getUid(), new ApiCallback<User>() {
                             @Override
-                            public void onUserFetched(User user) {
-                                currentUser = user;
+                            public void onSuccess(User result) {
+                                currentUser=result;
+                                listener.onComplete(task);
                             }
 
                             @Override
                             public void onError(String error) {
+
                             }
                         });
                     }
-                    listener.onComplete(task);
                 });
     }
 
@@ -52,7 +53,8 @@ public class SessionManager {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        User user = new User(userName, email);
+                        User user = new User(getAuthUser().getUid(), userName, email);
+                        currentUser = user;
                         db.collection("User").document(getAuthUser().getUid())
                                 .set(user);
                     }
@@ -76,5 +78,9 @@ public class SessionManager {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public static User test(){
+        return new User("i2BXtnkRKcNfyisWSR13Y4vh9S93","nam","nam@gmail.com");
     }
 }

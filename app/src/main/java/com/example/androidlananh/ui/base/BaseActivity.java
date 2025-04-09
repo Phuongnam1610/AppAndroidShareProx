@@ -2,6 +2,7 @@ package com.example.androidlananh.ui.base;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -14,6 +15,12 @@ public abstract class BaseActivity<Presenter extends BasePresenter> extends AppC
     public void showError(String error) {
         Toast.makeText(this,error,LENGTH_SHORT).show();
         hideLoading();
+    }
+
+    @Override
+    public Context getContext() {
+        return getApplicationContext();
+
     }
 
     protected Presenter presenter;

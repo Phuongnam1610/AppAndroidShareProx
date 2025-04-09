@@ -14,6 +14,7 @@ import com.example.androidlananh.databinding.ActivityMainBinding;
 import com.example.androidlananh.databinding.ActivitySignInBinding;
 import com.example.androidlananh.ui.base.BaseActivity;
 import com.example.androidlananh.ui.main.MainActivity;
+import com.example.androidlananh.ui.signup.SignUpActivity;
 
 public class SignInActivity extends BaseActivity<SignInPresenter> implements SignInView {
     private ActivitySignInBinding binding;
@@ -36,8 +37,12 @@ public class SignInActivity extends BaseActivity<SignInPresenter> implements Sig
             String password=binding.edtPassword.getText().toString();
             presenter.signIn(email,password);
         });
-        binding.btnregister.setOnClickListener(v -> {});
-        binding.btnforgot.setOnClickListener(v -> {});
+        binding.btnregister.setOnClickListener(v -> {
+            startActivity(new Intent(this, SignUpActivity.class));
+        });
+        binding.btnforgot.setOnClickListener(v -> {
+            
+        });
     }
 
 

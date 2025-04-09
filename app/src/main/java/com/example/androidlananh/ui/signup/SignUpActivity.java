@@ -21,26 +21,7 @@ import com.example.androidlananh.ui.main.MainActivity;
 
 public class SignUpActivity extends BaseActivity<SignUpPresenter> implements SignUpView {
     private ActivitySignUpBinding binding;
-    private ActivityResultLauncher<Intent> imagePickerLauncher;
-    private Uri selectedImageUri;
 
-    private void setupImagePicker() {
-        imagePickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                        Uri selectedImageUri = result.getData().getData();
-                        if (selectedImageUri != null) {
-                        }
-                    }
-                }
-        );
-    }
-
-    public void openImagePicker() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        imagePickerLauncher.launch(intent);
-    }
     @NonNull
     @Override
     protected SignUpPresenter createPresenter() {
@@ -54,7 +35,6 @@ public class SignUpActivity extends BaseActivity<SignUpPresenter> implements Sig
         setContentView(binding.getRoot());
         setupEdgeToEdge();
         setupWindowInsets();
-        setupImagePicker();
         binding.btnRegister.setOnClickListener(v -> {
             String email=binding.edtEmail.getText().toString();
             String password=binding.edtPassword.getText().toString();

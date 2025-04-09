@@ -12,14 +12,14 @@ public class SignUpPresenter extends BasePresenter<SignUpView> {
         super(view);
     }
 
-    public void signUp(String email, String password, String userName){
+    public void signUp(String email, String password, String userName) {
         try {
             view.showLoading();
-            if(email.isEmpty()||password.isEmpty()||userName.isEmpty()){
+            if (email.isEmpty() || password.isEmpty() || userName.isEmpty()) {
                 view.showError("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
-            SessionManager.getInstance().signUp(email, password, userName,task -> {
+            SessionManager.getInstance().signUp(email, password, userName, task -> {
                 if (task.isSuccessful()) {
                     view.onSignUpSuccess();
                 } else {
@@ -33,8 +33,6 @@ public class SignUpPresenter extends BasePresenter<SignUpView> {
             view.hideLoading();
         }
     }
-
-
 
 
 }
