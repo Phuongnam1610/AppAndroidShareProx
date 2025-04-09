@@ -14,7 +14,7 @@
         android:layout_height="@dimen/_30sdp"
         android:inputType="text"
         android:gravity="start"
-        android:padding="@dimen/_8sdp"/>
+        android:padding="@dimen/_5sdp"/>
     <LinearLayout
         android:layout_marginVertical="@dimen/_10sdp"
         android:orientation="horizontal"
