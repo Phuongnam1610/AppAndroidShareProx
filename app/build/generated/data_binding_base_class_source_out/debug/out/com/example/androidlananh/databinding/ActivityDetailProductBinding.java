@@ -102,7 +102,11 @@ public final class ActivityDetailProductBinding implements ViewBinding {
         break missingId;
       }
 
-      LinearLayout main = (LinearLayout) rootView;
+      id = R.id.main;
+      LinearLayout main = ViewBindings.findChildViewById(rootView, id);
+      if (main == null) {
+        break missingId;
+      }
 
       id = R.id.tvDescription;
       TextView tvDescription = ViewBindings.findChildViewById(rootView, id);

@@ -15,15 +15,15 @@
 13    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 13-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:6:5-76
 13-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:6:22-73
-14    <uses-permission android:name="android.permission.INTERNET" />
-14-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
-14-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:22-64
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
-15-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:22-76
-16    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
-16-->[androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\348535fda4a5ce909645431bbbe1d683\transformed\biometric-1.1.0\AndroidManifest.xml:24:5-72
-16-->[androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\348535fda4a5ce909645431bbbe1d683\transformed\biometric-1.1.0\AndroidManifest.xml:24:22-69
+14    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+14-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:7:5-72
+14-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:7:22-69
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
+15-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:22-64
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- suppress DeprecatedClassUsageInspection -->
+16-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
+16-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:22-76
 17    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 17-->[androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\348535fda4a5ce909645431bbbe1d683\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
 17-->[androidx.biometric:biometric:1.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\348535fda4a5ce909645431bbbe1d683\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
@@ -43,79 +43,79 @@
 24-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\34433bb6e2bf2771c587917ea2f9528f\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
 25
 26    <application
-26-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:8:5-49:19
+26-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:9:5-50:19
 27        android:allowBackup="true"
-27-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:9:9-35
+27-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:10:9-35
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 28-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\34433bb6e2bf2771c587917ea2f9528f\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 29        android:dataExtractionRules="@xml/data_extraction_rules"
-29-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:10:9-65
+29-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:11:9-65
 30        android:debuggable="true"
 31        android:extractNativeLibs="false"
 32        android:fullBackupContent="@xml/backup_rules"
-32-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:11:9-54
+32-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:12:9-54
 33        android:icon="@mipmap/ic_launcher"
-33-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:12:9-43
+33-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:13:9-43
 34        android:label="@string/app_name"
-34-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:13:9-41
+34-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:14:9-41
 35        android:roundIcon="@mipmap/ic_launcher_round"
-35-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:14:9-54
+35-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:15:9-54
 36        android:supportsRtl="true"
-36-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:15:9-35
+36-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:16:9-35
 37        android:testOnly="true"
 38        android:theme="@style/Theme.AndroidLanAnh" >
-38-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:16:9-51
+38-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:17:9-51
 39        <activity
-39-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:18:9-21:20
+39-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:19:9-22:20
 40            android:name="com.example.androidlananh.ui.main.MainActivity"
-40-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:19:13-49
+40-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:20:13-49
 41            android:exported="true" >
-41-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:20:13-36
+41-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:21:13-36
 42        </activity>
 43        <activity
-43-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:22:9-25:20
+43-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:23:9-26:20
 44            android:name="com.example.androidlananh.ui.signup.SignUpActivity"
-44-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:23:13-53
+44-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:24:13-53
 45            android:exported="true" >
-45-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:24:13-36
+45-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:25:13-36
 46        </activity>
 47        <activity
-47-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:26:9-29:20
+47-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:27:9-30:20
 48            android:name="com.example.androidlananh.ui.profile.ProfileActivity"
-48-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:27:13-55
+48-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:28:13-55
 49            android:exported="true" >
-49-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:28:13-36
+49-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:29:13-36
 50        </activity>
 51        <activity
-51-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:30:9-38:20
+51-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:31:9-39:20
 52            android:name="com.example.androidlananh.ui.signin.SignInActivity"
-52-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:31:13-53
+52-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:32:13-53
 53            android:exported="true" >
-53-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:32:13-36
+53-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:33:13-36
 54            <intent-filter>
-54-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:33:13-37:29
+54-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:34:13-38:29
 55                <action android:name="android.intent.action.MAIN" />
-55-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:34:17-69
-55-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:34:25-66
+55-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:35:17-69
+55-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:35:25-66
 56
 57                <category android:name="android.intent.category.LAUNCHER" />
-57-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:36:17-77
-57-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:36:27-74
+57-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:37:17-77
+57-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:37:27-74
 58            </intent-filter>
 59        </activity>
 60        <activity
-60-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:39:9-43:20
+60-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:40:9-44:20
 61            android:name="com.example.androidlananh.ui.uppost.UpPostActivity"
-61-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:40:13-53
+61-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:41:13-53
 62            android:exported="true" >
-62-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:41:13-36
+62-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:42:13-36
 63        </activity>
 64        <activity
-64-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:44:9-48:20
+64-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:45:9-49:20
 65            android:name="com.example.androidlananh.ui.detailproduct.DetailProductActivity"
-65-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:45:13-67
+65-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:46:13-67
 66            android:exported="true" >
-66-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:46:13-36
+66-->C:\Users\Administrator\AndroidStudioProjects\AndroidLanAnh\app\src\main\AndroidManifest.xml:47:13-36
 67        </activity>
 68        <activity
 68-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4a0f90773b88d104ba66326bd6465960\transformed\firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20

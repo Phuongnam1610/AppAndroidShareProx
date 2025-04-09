@@ -164,6 +164,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "com.example.androidlananh.app-debug-56:/layout_activity_profile.xml.flat",
+        "source": "com.example.androidlananh.app-main-58:/layout/activity_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-debug-56:\\drawable_defaultava.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.example.androidlananh.app-main-58:\\drawable\\defaultava.png"
     },
