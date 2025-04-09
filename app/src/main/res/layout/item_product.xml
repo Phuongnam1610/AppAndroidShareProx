@@ -25,7 +25,7 @@
                 android:layout_height="@dimen/_130sdp"/>
             <TextView
                 android:id="@+id/tvNameProduct"
-                style="@style/textPrimarySmall"
+                style="@style/textPrimaryMedium"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:text="Bánh sinh nhật"

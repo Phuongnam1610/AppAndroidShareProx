@@ -34,12 +34,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SessionManager.getInstance().signIn("nam@gmail.com", "123456", new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-            }
-        });
+//        SessionManager.getInstance().signIn("nam@gmail.com", "123456", new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//
+//            }
+//        });
         initializeViewBinding();
         setupEdgeToEdge();
         setupWindowInsets();
