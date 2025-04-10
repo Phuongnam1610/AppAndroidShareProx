@@ -20,6 +20,7 @@ import com.example.androidlananh.ui.base.BaseActivity;
 import com.example.androidlananh.ui.fragments.home.HomeFragment;
 import com.example.androidlananh.ui.fragments.user.UserFragment;
 import com.example.androidlananh.ui.uppost.UpPostActivity;
+import com.example.androidlananh.utils.SafeCallback;
 import com.example.androidlananh.utils.SessionManager;
 import com.example.androidlananh.utils.ShakeDetector;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,12 +43,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SessionManager.getInstance().signIn("nam@gmail.com", "123456", new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
 
-            }
-        });
         initializeViewBinding();
         setupEdgeToEdge();
         setupWindowInsets();

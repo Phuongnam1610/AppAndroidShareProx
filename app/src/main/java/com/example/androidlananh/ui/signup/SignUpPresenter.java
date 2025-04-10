@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.example.androidlananh.ui.base.BasePresenter;
+import com.example.androidlananh.utils.SafeCallback;
 import com.example.androidlananh.utils.SessionManager;
 
 public class SignUpPresenter extends BasePresenter<SignUpView> {
@@ -19,14 +20,18 @@ public class SignUpPresenter extends BasePresenter<SignUpView> {
                 view.showError("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
-            SessionManager.getInstance().signUp(email, password, userName, task -> {
-                if (task.isSuccessful()) {
+            SessionManager.getInstance().signUp(email, password, userName, new SafeCallback<Boolean>() {
+                @Override
+                protected void handleSuccess(Boolean result) {
                     view.onSignUpSuccess();
-                } else {
-                    String errorMessage = task.getException() != null ? task.getException().getMessage() : "Lỗi khi đăng ký tài khoản";
-                    view.showError(errorMessage);
+                }
+
+                @Override
+                protected void handleError(String error) {
+                    view.showError(error);
                 }
             });
+
         } catch (Exception e) {
             Log.d("signup", e.toString());
             view.showError(e.getMessage() != null ? e.getMessage() : "Đã xảy ra lỗi. Vui lòng thử lại.");

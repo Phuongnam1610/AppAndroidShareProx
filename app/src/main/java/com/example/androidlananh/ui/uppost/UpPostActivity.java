@@ -104,7 +104,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
             String name = binding.edtName.getText().toString();
             String description = binding.edtDescription.getText().toString();
             int count = -1;
-            try {
+            try     {
                 count = Integer.parseInt(binding.edtNumber.getText().toString());
             } catch (Exception e) {
             }

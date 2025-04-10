@@ -16,20 +16,28 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.DialogFragment;
 
 import com.bumptech.glide.Glide;
 import com.example.androidlananh.databinding.ActivityProfileBinding;
 import com.example.androidlananh.model.User;
 import com.example.androidlananh.ui.base.BaseActivity;
+import com.example.androidlananh.ui.dialoginputpass.DialogInputPassword;
 import com.example.androidlananh.utils.BiometricHelper;
+import com.example.androidlananh.utils.SafeCallback;
 import com.example.androidlananh.utils.SessionManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 
-public class ProfileActivity extends BaseActivity<ProfilePresenter> implements ProfileView {
+public class ProfileActivity extends BaseActivity<ProfilePresenter> implements ProfileView, DialogInputPassword.PasswordListener {
     private ActivityProfileBinding binding;
     private ActivityResultLauncher<Intent> imagePickerLauncher;
+    private DialogInputPassword dialogInputPassword;
 
     private Uri selectedImageUri;
-    private User currentUser=SessionManager.getInstance().getCurrentUser();
+    private User currentUser = SessionManager.getInstance().getCurrentUser();
+
     private void setupImagePicker() {
         imagePickerLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -48,6 +56,7 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         imagePickerLauncher.launch(intent);
     }
+
     @NonNull
     @Override
     protected ProfilePresenter createPresenter() {
@@ -60,18 +69,28 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
         initializeViewBinding();
         setupEdgeToEdge();
         setupWindowInsets();
+        setupDialog();
+        setupBiometric();
+
         setupImagePicker();
         setupOnClick();
-        setupBiometric();
+
         displayProfileData(currentUser);
 
-        
     }
-    private void setupOnClick(){
+
+    private void setupDialog() {
+        dialogInputPassword = new DialogInputPassword();
+        dialogInputPassword.setCancelable(false);
+
+
+    }
+
+    private void setupOnClick() {
         binding.imavatar.setOnClickListener(v -> {
             openImagePicker();
         });
-        binding.btnBack.setOnClickListener(v->{
+        binding.btnBack.setOnClickListener(v -> {
             finish();
         });
         binding.btnUpdate.setOnClickListener(v -> {
@@ -81,34 +100,38 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
             currentUser.setId(currentUser.getId());
             currentUser.setEmail(email);
             currentUser.setUserName(userName);
-            if(selectedImageUri!=null){
+            if (selectedImageUri != null) {
                 currentUser.setImageAvatar(selectedImageUri.toString());
             }
 
             presenter.updateProfile(currentUser);
         });
     }
-    private void setupBiometric(){
+
+    private void setupBiometric() {
         if (BiometricHelper.isBiometricAvailable(this)) {
             BiometricHelper.showBiometricPrompt(this, new BiometricHelper.BiometricAuthCallback() {
                 @Override
                 public void onAuthenticationSuccess() {
-                   showError("Vui lòng chạm vào cảm biến vân tay để tiếp tục");
+                    showError("Xác thực vân tay thành công");
                 }
 
                 @Override
                 public void onAuthenticationError(int errorCode, String errorMessage) {
-                   showError("Không xác thực được vân tay");
-                   finish();
+                    showError("Không xác thực được vân tay");
+                    dialogInputPassword.show(getSupportFragmentManager(), "password_dialog");
                 }
             });
         } else {
-        showError("kkk");
+            showError("Không xác thực được vân tay");
+            dialogInputPassword.show(getSupportFragmentManager(), "password_dialog");
+
         }
 
     }
+
     private void mockTest() {
-        currentUser=SessionManager.test();
+        currentUser = SessionManager.test();
     }
 
     private void initializeViewBinding() {
@@ -153,7 +176,7 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
 
         binding.edtUserName.setText(user.getUserName());
         binding.edtEmail.setText(user.getEmail());
-        if (user.getImageAvatar()!=null && user.getImageAvatar().isEmpty() == false) {
+        if (user.getImageAvatar() != null && user.getImageAvatar().isEmpty() == false) {
             Glide.with(this)
                     .load(user.getImageAvatar())
                     .into(binding.imavatar);
@@ -172,5 +195,29 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
     }
 
 
+    @Override
+    public void onPasswordEntered(String password) {
+        try {
+            SessionManager.getInstance().signIn(currentUser.getEmail(), password, new SafeCallback<Boolean>() {
+                @Override
+                protected void handleSuccess(Boolean result) {
+                    dialogInputPassword.dismiss();
+                }
 
+                @Override
+                protected void handleError(String error) {
+                    dialogInputPassword.hideLoading();
+                    showError(error);
+                }
+            });
+        }catch (Exception e){
+            dialogInputPassword.hideLoading();
+            showError(e.getMessage());
+        }
+    }
+
+    @Override
+    public void onClose() {
+        finish();
+    }
 }

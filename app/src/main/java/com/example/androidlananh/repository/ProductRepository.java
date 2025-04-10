@@ -1,5 +1,7 @@
 package com.example.androidlananh.repository;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.androidlananh.model.Product;
@@ -110,14 +112,14 @@ public class ProductRepository {
     }
 
     public void getNearbyProducts(double latitude, double longitude, double radiusInKm, final ApiCallback<ArrayList<Product>> listener) {
-        final double radiusInM = 50 * 1000;
+        final double radiusInM = radiusInKm * 1000;
         final GeoLocation center = new GeoLocation(latitude, longitude);
 
         List<GeoQueryBounds> bounds = GeoFireUtils.getGeoHashQueryBounds(center, radiusInM);
         final List<Task<QuerySnapshot>> tasks = new ArrayList<>();
         for (GeoQueryBounds b : bounds) {
             Query q = db.collection("Product")
-                    .orderBy("location.coordinates")
+                    .orderBy("location.coordinates.geohash")
                     .startAt(b.startHash)
                     .endAt(b.endHash);
 
@@ -128,20 +130,26 @@ public class ProductRepository {
                 .addOnCompleteListener(new OnCompleteListener<List<Task<?>>>() {
                     @Override
                     public void onComplete(@NonNull Task<List<Task<?>>> t) {
-                        List<DocumentSnapshot> matchingDocs = new ArrayList<>();
+                        ArrayList<Product> products = new ArrayList<>();
 
                         for (Task<QuerySnapshot> task : tasks) {
                             QuerySnapshot snap = task.getResult();
                             for (DocumentSnapshot doc : snap.getDocuments()) {
-                                double lat = doc.getDouble("lat");
-                                double lng = doc.getDouble("lng");
+                                double lat = doc.getDouble("location.coordinates.lat");
+                                double lng = doc.getDouble("location.coordinates.lng");
                                 GeoLocation docLocation = new GeoLocation(lat, lng);
                                 double distanceInM = GeoFireUtils.getDistanceBetween(docLocation, center);
                                 if (distanceInM <= radiusInM) {
-                                    matchingDocs.add(doc);
+                                    Product product = Product.fromDocument(doc);
+                                    if (product != null) {
+                                        product.setId(doc.getId());
+                                        products.add(product);
+                                    }
                                 }
                             }
                         }
+                        
+                        listener.onSuccess(products);
 
                     }
                 });

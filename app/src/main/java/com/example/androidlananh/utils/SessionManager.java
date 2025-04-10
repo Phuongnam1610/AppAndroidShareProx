@@ -1,9 +1,12 @@
 package com.example.androidlananh.utils;
 
+import androidx.annotation.NonNull;
+
 import com.example.androidlananh.model.User;
 import com.example.androidlananh.repository.ApiCallback;
 import com.example.androidlananh.repository.UserRepository;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,7 +16,7 @@ public class SessionManager {
     private static SessionManager instance;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
-    public  User currentUser;
+    public User currentUser;
     private UserRepository userRepository;
 
     private SessionManager() {
@@ -29,27 +32,36 @@ public class SessionManager {
         return instance;
     }
 
-    public void signIn(String email, String password, OnCompleteListener<AuthResult> listener) {
+    public void signIn(String email, String password, ApiCallback<Boolean> listener) {
+
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         userRepository.getUserById(getAuthUser().getUid(), new ApiCallback<User>() {
                             @Override
                             public void onSuccess(User result) {
-                                currentUser=result;
-                                listener.onComplete(task);
+                                currentUser = result;
+                                listener.onSuccess(true);
                             }
 
                             @Override
                             public void onError(String error) {
-
+                                listener.onError(error);
                             }
                         });
                     }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        listener.onError(e.getMessage());
+                    }
                 });
+
     }
 
-    public void signUp(String email, String password, String userName, OnCompleteListener<AuthResult> listener) {
+    public void signUp(String email, String password, String userName, ApiCallback<Boolean> listener) {
+
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -58,8 +70,13 @@ public class SessionManager {
                         db.collection("User").document(getAuthUser().getUid())
                                 .set(user);
                     }
-                    listener.onComplete(task);
+                    listener.onSuccess(true);
 
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        listener.onError(e.getMessage());
+                    }
                 });
     }
 
@@ -80,7 +97,7 @@ public class SessionManager {
         return currentUser;
     }
 
-    public static User test(){
-        return new User("i2BXtnkRKcNfyisWSR13Y4vh9S93","nam","nam@gmail.com");
+    public static User test() {
+        return new User("i2BXtnkRKcNfyisWSR13Y4vh9S93", "nam", "nam@gmail.com");
     }
 }
