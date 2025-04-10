@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
@@ -20,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.example.androidlananh.databinding.ActivityProfileBinding;
 import com.example.androidlananh.model.User;
 import com.example.androidlananh.ui.base.BaseActivity;
+import com.example.androidlananh.utils.BiometricHelper;
 import com.example.androidlananh.utils.SessionManager;
 
 public class ProfileActivity extends BaseActivity<ProfilePresenter> implements ProfileView {
@@ -59,8 +61,13 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
         setupEdgeToEdge();
         setupWindowInsets();
         setupImagePicker();
-
+        setupOnClick();
+        setupBiometric();
         displayProfileData(currentUser);
+
+        
+    }
+    private void setupOnClick(){
         binding.imavatar.setOnClickListener(v -> {
             openImagePicker();
         });
@@ -81,7 +88,25 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
             presenter.updateProfile(currentUser);
         });
     }
+    private void setupBiometric(){
+        if (BiometricHelper.isBiometricAvailable(this)) {
+            BiometricHelper.showBiometricPrompt(this, new BiometricHelper.BiometricAuthCallback() {
+                @Override
+                public void onAuthenticationSuccess() {
+                   showError("Vui lòng chạm vào cảm biến vân tay để tiếp tục");
+                }
 
+                @Override
+                public void onAuthenticationError(int errorCode, String errorMessage) {
+                   showError("Không xác thực được vân tay");
+                   finish();
+                }
+            });
+        } else {
+        showError("kkk");
+        }
+
+    }
     private void mockTest() {
         currentUser=SessionManager.test();
     }
