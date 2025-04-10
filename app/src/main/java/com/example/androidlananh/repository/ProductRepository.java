@@ -117,7 +117,7 @@ public class ProductRepository {
         final List<Task<QuerySnapshot>> tasks = new ArrayList<>();
         for (GeoQueryBounds b : bounds) {
             Query q = db.collection("Product")
-                    .orderBy("location.point")
+                    .orderBy("location.coordinates")
                     .startAt(b.startHash)
                     .endAt(b.endHash);
 

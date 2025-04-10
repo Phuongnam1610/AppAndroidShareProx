@@ -1,5 +1,7 @@
     package com.example.androidlananh.model;
 
+    import com.firebase.geofire.GeoFireUtils;
+    import com.firebase.geofire.GeoLocation;
     import com.google.firebase.firestore.DocumentSnapshot;
     import com.google.firebase.firestore.GeoPoint;
 
@@ -53,7 +55,12 @@
         public Map<String, Object> toMap() {
             Map<String, Object> map = new HashMap<>();
             map.put("address", address);
-            map.put("point", new GeoPoint(latitude, longitude));
+            String hash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(latitude, longitude));
+            Map<String, Object> updates = new HashMap<>();
+            updates.put("geohash", hash);
+            updates.put("lat", latitude);
+            updates.put("lng", longitude);
+            map.put("coordinates", updates);
             return map;
         }
 
@@ -67,8 +74,8 @@
         }
         public static Location fromMap(Map<String,Object> map) {
             String address = map.get("address").toString();
-            GeoPoint geoPoint = (GeoPoint) map.get("point");
-            return new Location(address, geoPoint.getLatitude(), geoPoint.getLongitude());
+            Map<String,Object> coordinates=(Map<String,Object>) map.get("coordinates");
+            return new Location(address,(double) coordinates.get("lat"), (double)coordinates.get("lng"));
         }
         public  Location(){
 
