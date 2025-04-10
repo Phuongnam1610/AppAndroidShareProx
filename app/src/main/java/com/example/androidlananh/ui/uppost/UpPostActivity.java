@@ -18,19 +18,41 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.airbnb.lottie.L;
 import com.example.androidlananh.databinding.ActivityUpPostBinding;
 import com.example.androidlananh.model.Product;
+import com.example.androidlananh.model.Location;
 import com.example.androidlananh.ui.base.BaseActivity;
+import com.example.androidlananh.ui.picklocation.LocationSearchActivity;
 import com.example.androidlananh.utils.Constant;
 import com.example.androidlananh.utils.SessionManager;
 
 public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpPostView {
     private ActivityUpPostBinding binding;
     private ActivityResultLauncher<Intent> imagePickerLauncher;
-
+    private ActivityResultLauncher<Intent> locationPickerLauncher;
     private Uri selectedImageUri;
+    private Location location = new Location("", 0, 0);
+    private String type = "";
 
-    private String type="";
+    private void setupLocationPicker() {
+        locationPickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        location = (Location) result.getData().getSerializableExtra("search_result");
+                        if(location!=null){
+                            binding.tvAddress.setText(location.getAddress());
+                        }
+                    }
+                }
+        );
+    }
+
+    public void openLocationPicker() {
+        Intent intent = new Intent(this,LocationSearchActivity.class);
+        locationPickerLauncher.launch(intent);
+    }
 
     private void setupImagePicker() {
         imagePickerLauncher = registerForActivityResult(
@@ -42,6 +64,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
                             displayImageUri(selectedImageUri);
                             Log.d("imageuri", String.valueOf(selectedImageUri));
                         }
+
                     }
                 }
         );
@@ -51,6 +74,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         imagePickerLauncher.launch(intent);
     }
+
 
     @NonNull
     @Override
@@ -65,6 +89,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
         setupEdgeToEdge();
         setupWindowInsets();
         setupImagePicker();
+        setupLocationPicker();
         setupOnClick();
         setupTypePost();
 
@@ -72,6 +97,9 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
     }
 
     private void setupOnClick() {
+        binding.btnPickAddress.setOnClickListener(v -> {
+            openLocationPicker();
+        });
         binding.btnPost.setOnClickListener(v -> {
             String name = binding.edtName.getText().toString();
             String description = binding.edtDescription.getText().toString();
@@ -79,7 +107,6 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
             try {
                 count = Integer.parseInt(binding.edtNumber.getText().toString());
             } catch (Exception e) {
-                showError("Số lượng phải là 1 số");
             }
             String unit = binding.edtUnit.getText().toString();
             Product product = new Product();
@@ -87,7 +114,10 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
             product.setDescription(description);
             product.setAuthorID(SessionManager.getInstance().getCurrentUser().getId());
             product.setType(type);
-            product.setImage(String.valueOf(selectedImageUri));
+            product.setLocation(location);
+            if (selectedImageUri != null) {
+                product.setImage(String.valueOf(selectedImageUri));
+            }
             product.setCount(count);
             product.setUnit(unit);
             presenter.addProduct(product);
@@ -112,12 +142,14 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
 
     private void setupTypePost() {
         type = getIntent().getStringExtra(Constant.TYPE_PASS_KEY);
-        if (type == Constant.TYPE_RECEIVE) {
-            binding.btnReceive.performClick();
-            binding.btnShare.setVisibility(GONE);
-        } else if (type == Constant.TYPE_SHARE) {
-            binding.btnShare.performClick();
-            binding.btnReceive.setVisibility(GONE);
+        if (type != null) {
+            if (type.equals(Constant.TYPE_RECEIVE)) {
+                binding.btnReceive.performClick();
+                binding.btnShare.setVisibility(GONE);
+            } else if (type.equals(Constant.TYPE_SHARE)) {
+                binding.btnShare.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+                binding.btnReceive.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+            }
         }
 
     }

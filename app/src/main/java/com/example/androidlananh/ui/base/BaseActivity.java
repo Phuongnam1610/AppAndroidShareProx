@@ -38,6 +38,7 @@ public abstract class BaseActivity<Presenter extends BasePresenter> extends AppC
     public void onDestroy() {
         super.onDestroy();
         presenter.onDetach();
+        presenter.onDestroy();
     }
 
 

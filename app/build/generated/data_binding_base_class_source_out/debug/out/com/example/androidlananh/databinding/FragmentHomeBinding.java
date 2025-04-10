@@ -25,6 +25,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Button btnReceive;
 
   @NonNull
+  public final Button btnRecent;
+
+  @NonNull
   public final Button btnShare;
 
   @NonNull
@@ -34,9 +37,11 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView rcvPost;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnReceive,
-      @NonNull Button btnShare, @NonNull EditText edtFind, @NonNull RecyclerView rcvPost) {
+      @NonNull Button btnRecent, @NonNull Button btnShare, @NonNull EditText edtFind,
+      @NonNull RecyclerView rcvPost) {
     this.rootView = rootView;
     this.btnReceive = btnReceive;
+    this.btnRecent = btnRecent;
     this.btnShare = btnShare;
     this.edtFind = edtFind;
     this.rcvPost = rcvPost;
@@ -75,6 +80,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnRecent;
+      Button btnRecent = ViewBindings.findChildViewById(rootView, id);
+      if (btnRecent == null) {
+        break missingId;
+      }
+
       id = R.id.btnShare;
       Button btnShare = ViewBindings.findChildViewById(rootView, id);
       if (btnShare == null) {
@@ -93,8 +104,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, btnReceive, btnShare, edtFind,
-          rcvPost);
+      return new FragmentHomeBinding((LinearLayout) rootView, btnReceive, btnRecent, btnShare,
+          edtFind, rcvPost);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

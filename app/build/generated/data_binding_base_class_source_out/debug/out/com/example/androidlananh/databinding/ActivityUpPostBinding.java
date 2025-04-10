@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -27,6 +28,9 @@ public final class ActivityUpPostBinding implements ViewBinding {
 
   @NonNull
   public final Button btnBack;
+
+  @NonNull
+  public final Button btnPickAddress;
 
   @NonNull
   public final Button btnPost;
@@ -52,14 +56,19 @@ public final class ActivityUpPostBinding implements ViewBinding {
   @NonNull
   public final ImageView imvProduct;
 
+  @NonNull
+  public final TextView tvAddress;
+
   private ActivityUpPostBinding(@NonNull FrameLayout rootView,
-      @NonNull LottieAnimationView animationView, @NonNull Button btnBack, @NonNull Button btnPost,
-      @NonNull Button btnReceive, @NonNull Button btnShare, @NonNull EditText edtDescription,
-      @NonNull EditText edtName, @NonNull EditText edtNumber, @NonNull EditText edtUnit,
-      @NonNull ImageView imvProduct) {
+      @NonNull LottieAnimationView animationView, @NonNull Button btnBack,
+      @NonNull Button btnPickAddress, @NonNull Button btnPost, @NonNull Button btnReceive,
+      @NonNull Button btnShare, @NonNull EditText edtDescription, @NonNull EditText edtName,
+      @NonNull EditText edtNumber, @NonNull EditText edtUnit, @NonNull ImageView imvProduct,
+      @NonNull TextView tvAddress) {
     this.rootView = rootView;
     this.animationView = animationView;
     this.btnBack = btnBack;
+    this.btnPickAddress = btnPickAddress;
     this.btnPost = btnPost;
     this.btnReceive = btnReceive;
     this.btnShare = btnShare;
@@ -68,6 +77,7 @@ public final class ActivityUpPostBinding implements ViewBinding {
     this.edtNumber = edtNumber;
     this.edtUnit = edtUnit;
     this.imvProduct = imvProduct;
+    this.tvAddress = tvAddress;
   }
 
   @Override
@@ -106,6 +116,12 @@ public final class ActivityUpPostBinding implements ViewBinding {
       id = R.id.btnBack;
       Button btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPickAddress;
+      Button btnPickAddress = ViewBindings.findChildViewById(rootView, id);
+      if (btnPickAddress == null) {
         break missingId;
       }
 
@@ -157,8 +173,15 @@ public final class ActivityUpPostBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityUpPostBinding((FrameLayout) rootView, animationView, btnBack, btnPost,
-          btnReceive, btnShare, edtDescription, edtName, edtNumber, edtUnit, imvProduct);
+      id = R.id.tvAddress;
+      TextView tvAddress = ViewBindings.findChildViewById(rootView, id);
+      if (tvAddress == null) {
+        break missingId;
+      }
+
+      return new ActivityUpPostBinding((FrameLayout) rootView, animationView, btnBack,
+          btnPickAddress, btnPost, btnReceive, btnShare, edtDescription, edtName, edtNumber,
+          edtUnit, imvProduct, tvAddress);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
