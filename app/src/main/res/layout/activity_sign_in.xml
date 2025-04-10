@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bggradient2"
+
     >
 
     <LinearLayout
@@ -47,8 +47,7 @@
                         style="@style/TitleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sign In"
-                        />
+                        android:text="Sign In" />
 
                     <EditText
                         android:id="@+id/edtEmail"
@@ -58,19 +57,17 @@
                         android:inputType="text" />
 
                     <EditText
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:id="@+id/edtPassword"
                         style="@style/edtstyle"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:hint="Password"
-                        android:inputType="textPassword"
-                      />
+                        android:inputType="textPassword" />
 
                     <Button
                         android:id="@+id/btnlogin"
                         style="@style/btnPrimaryMedium"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:text="Sign In"
-                        />
+                        android:text="Sign In" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -80,17 +77,15 @@
 
                         <TextView
                             android:id="@+id/btnregister"
-                            android:layout_marginTop="@dimen/_10sdp"
                             style="@style/textPrimaryMedium"
-                            android:text="Chưa có tài khoản, đăng ký ngay"
-                            />
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Chưa có tài khoản, đăng ký ngay" />
 
                         <TextView
                             android:id="@+id/btnforgot"
-                            android:layout_marginTop="@dimen/_10sdp"
                             style="@style/textPrimaryMedium"
-                            android:text="Quên mật khẩu"
-                            />
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Quên mật khẩu" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -106,11 +101,7 @@
         android:layout_height="@dimen/_50sdp"
         android:visibility="gone"
         android:layout_gravity="center"
-
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading2" />
-
-
-
 </FrameLayout>
