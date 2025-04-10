@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.androidlananh.activity.NearbyProductsMapActivity;
 import com.example.androidlananh.adapter.ProductAdapter;
 import com.example.androidlananh.databinding.FragmentHomeBinding;
 import com.example.androidlananh.model.Product;
@@ -50,6 +51,10 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         });
         binding.btnShare.setOnClickListener(v -> {
             startActivity(new Intent(getContext(), UpPostActivity.class).putExtra(Constant.TYPE_PASS_KEY,Constant.TYPE_SHARE));
+        });
+        binding.btnRecent.setOnClickListener(v->{
+            startActivity(new Intent(getContext(), NearbyProductsMapActivity.class));
+
         });
         binding.edtFind.addTextChangedListener(new TextWatcher() {
             @Override

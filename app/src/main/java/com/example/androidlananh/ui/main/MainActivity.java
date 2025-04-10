@@ -1,7 +1,11 @@
 package com.example.androidlananh.ui.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -17,6 +21,7 @@ import com.example.androidlananh.ui.fragments.home.HomeFragment;
 import com.example.androidlananh.ui.fragments.user.UserFragment;
 import com.example.androidlananh.ui.uppost.UpPostActivity;
 import com.example.androidlananh.utils.SessionManager;
+import com.example.androidlananh.utils.ShakeDetector;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -24,6 +29,9 @@ import com.google.firebase.auth.AuthResult;
 public class MainActivity extends BaseActivity<MainPresenter> implements MainView {
     private ActivityMainBinding binding;
     private Fragment currentFragment;
+    private SensorManager sensorManager;
+    private ShakeDetector shakeDetector;
+    private Sensor accelerometer;
 
     @NonNull
     @Override
@@ -43,6 +51,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         initializeViewBinding();
         setupEdgeToEdge();
         setupWindowInsets();
+        initSensor();
+
         replaceFragment(new HomeFragment());
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.tab_home) {
@@ -54,6 +64,19 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
             } else {
             }
             return true;
+        });
+    }
+
+    private void initSensor(){
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        shakeDetector = new ShakeDetector();
+
+        shakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
+            @Override
+            public void onShake() {
+                showError("Gặp sự cố liên hệ: 19006750");
+            }
         });
     }
 
@@ -93,6 +116,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override
     protected void onResume() {
         super.onResume();
+        sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI);
+
         if (currentFragment instanceof HomeFragment) {
             binding.bottomNavigation.setSelectedItemId(R.id.tab_home);
         } else if (currentFragment instanceof UserFragment) {
@@ -104,5 +129,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         currentFragment = fragment;
         getSupportFragmentManager().beginTransaction().replace(binding.fragment.getId(), currentFragment).commit();
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(shakeDetector);
     }
 }

@@ -1,12 +1,23 @@
 package com.example.androidlananh.repository;
 
+import androidx.annotation.NonNull;
+
 import com.example.androidlananh.model.Product;
+import com.firebase.geofire.GeoFireUtils;
+import com.firebase.geofire.GeoLocation;
+import com.firebase.geofire.GeoQueryBounds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class ProductRepository {
     private FirebaseFirestore db;
@@ -36,18 +47,18 @@ public class ProductRepository {
                 });
     }
 
-    public void updateProduct(Product product, ApiCallback<Boolean> listener) {
-        db.collection("Product").document(product.getId())
+    public void updateProduct(Map<String, Object> product, ApiCallback<Boolean> listener) {
+        db.collection("Product").document(product.get("id").toString())
                 .set(product).addOnCompleteListener(task -> {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         listener.onSuccess(true);
-                    }else {
+                    } else {
                         listener.onError(task.getException().getMessage());
                     }
                 });
     }
 
-    public void addProduct(Product product, final ApiCallback<String> listener) {
+    public void addProduct(Map<String, Object> product, final ApiCallback<String> listener) {
         db.collection("Product")
                 .add(product)
                 .addOnSuccessListener(documentReference -> {
@@ -65,7 +76,7 @@ public class ProductRepository {
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     ArrayList<Product> products = new ArrayList<>();
                     for (DocumentSnapshot document : queryDocumentSnapshots) {
-                        Product product = document.toObject(Product.class);
+                        Product product = Product.fromDocument(document);
                         if (product != null) {
                             product.setId(document.getId());
                             products.add(product);
@@ -77,6 +88,7 @@ public class ProductRepository {
                     listener.onError(e.getMessage());
                 });
     }
+
     public void getAllProductByAuthorId(String authorId, final ApiCallback<ArrayList<Product>> listener) {
         db.collection("Product")
                 .whereEqualTo("authorID", authorId)
@@ -96,4 +108,44 @@ public class ProductRepository {
                     listener.onError(e.getMessage());
                 });
     }
+
+    public void getNearbyProducts(double latitude, double longitude, double radiusInKm, final ApiCallback<ArrayList<Product>> listener) {
+        final double radiusInM = 50 * 1000;
+        final GeoLocation center = new GeoLocation(latitude, longitude);
+
+        List<GeoQueryBounds> bounds = GeoFireUtils.getGeoHashQueryBounds(center, radiusInM);
+        final List<Task<QuerySnapshot>> tasks = new ArrayList<>();
+        for (GeoQueryBounds b : bounds) {
+            Query q = db.collection("Product")
+                    .orderBy("location.coordinates")
+                    .startAt(b.startHash)
+                    .endAt(b.endHash);
+
+            tasks.add(q.get());
+        }
+        // Collect all the query results together into a single list
+        Tasks.whenAllComplete(tasks)
+                .addOnCompleteListener(new OnCompleteListener<List<Task<?>>>() {
+                    @Override
+                    public void onComplete(@NonNull Task<List<Task<?>>> t) {
+                        List<DocumentSnapshot> matchingDocs = new ArrayList<>();
+
+                        for (Task<QuerySnapshot> task : tasks) {
+                            QuerySnapshot snap = task.getResult();
+                            for (DocumentSnapshot doc : snap.getDocuments()) {
+                                double lat = doc.getDouble("lat");
+                                double lng = doc.getDouble("lng");
+                                GeoLocation docLocation = new GeoLocation(lat, lng);
+                                double distanceInM = GeoFireUtils.getDistanceBetween(docLocation, center);
+                                if (distanceInM <= radiusInM) {
+                                    matchingDocs.add(doc);
+                                }
+                            }
+                        }
+
+                    }
+                });
+    }
+
+
 }

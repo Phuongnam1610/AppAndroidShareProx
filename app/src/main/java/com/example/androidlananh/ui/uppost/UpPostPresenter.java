@@ -26,21 +26,25 @@ public class UpPostPresenter extends BasePresenter<UpPostView> {
     public void addProduct(Product product){
         try {
             view.showLoading();
-            if(product.getImage().isEmpty()||product.getDescription().isEmpty()||product.getName().isEmpty()||product.getType().isEmpty()||product.getCount()==-1||product.getUnit().isEmpty())
-            {
-                view.showError("Vui lòng điền đầy đủ");
+            if(product.getLocation().getAddress().isEmpty()){
+                view.showError("Vui lòng chọn địa chỉ");
                 return;
             }
-            productRepository.addProduct(product, new SafeCallback<String>() {
+            if(product.getImage().isEmpty()||product.getDescription().isEmpty()||product.getName().isEmpty()||product.getType().isEmpty()||product.getCount()==-1||product.getUnit().isEmpty())
+            {
+                view.showError("Vui lòng điền đầy đủ và chọn ảnh");
+                return;
+            }
+            productRepository.addProduct(product.toMap(), new SafeCallback<String>() {
                 @Override
                 public void handleSuccess(String productId) {
                     product.setId(productId);
                     File file = FileUtils.uriToFile(view.getContext(), Uri.parse(product.getImage()));
                     ImageRepository.uploadUrlFile(file, productId,new SafeCallback<String>() {
                         @Override
-                        public void handleSuccess(String result) {
-                            product.setImage(result);
-                            productRepository.updateProduct(product, new SafeCallback<Boolean>() {
+                        public void handleSuccess(String url) {
+                            product.setImage(url);
+                            productRepository.updateProduct(product.toMap(), new SafeCallback<Boolean>() {
                                 @Override
                                 protected void handleSuccess(Boolean result) {
                                     view.addProductSuccess();

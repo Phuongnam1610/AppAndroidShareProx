@@ -10,8 +10,11 @@ public abstract class BasePresenter<View extends BaseView> {
     protected BasePresenter(View view) {
         this.view = view;
     }
-
+    protected void onDestroy(){}
     void onDetach() {
         view = null; //avoid memory leak
     }
+
+
+
 }
