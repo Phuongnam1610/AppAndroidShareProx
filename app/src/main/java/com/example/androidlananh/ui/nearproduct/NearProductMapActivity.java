@@ -1,6 +1,9 @@
-package com.example.androidlananh.activity;
+package com.example.androidlananh.ui.nearproduct;
+
+import static java.security.AccessController.getContext;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -18,6 +21,8 @@ import com.example.androidlananh.R;
 import com.example.androidlananh.model.Product;
 import com.example.androidlananh.repository.ApiCallback;
 import com.example.androidlananh.repository.ProductRepository;
+import com.example.androidlananh.ui.detailproduct.DetailProductActivity;
+import com.example.androidlananh.utils.Constant;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,7 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NearbyProductsMapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class NearProductMapActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private ProductRepository productRepository;
     private FusedLocationProviderClient fusedLocationClient;
@@ -73,7 +78,7 @@ public class NearbyProductsMapActivity extends AppCompatActivity implements OnMa
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
-        
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
             getCurrentLocationAndLoadProducts();
@@ -110,7 +115,7 @@ public class NearbyProductsMapActivity extends AppCompatActivity implements OnMa
         productRepository.getNearbyProducts(
                 location.getLatitude(),
                 location.getLongitude(),
-                50, // 50km radius
+                5,
                 new ApiCallback<ArrayList<Product>>() {
                     @Override
                     public void onSuccess(ArrayList<Product> products) {
@@ -129,16 +134,16 @@ public class NearbyProductsMapActivity extends AppCompatActivity implements OnMa
     }
 
     private void addMarkerForProduct(Product product) {
-        if (product.getLocation() != null ) {
+        if (product.getLocation() != null) {
             LatLng position = new LatLng(
                     product.getLocation().getLatitude(),
                     product.getLocation().getLongitude()
             );
-            
+
             Marker marker = mMap.addMarker(new MarkerOptions()
                     .position(position)
                     .title(product.getName()));
-            
+
             if (marker != null) {
                 markerProductMap.put(marker, product);
             }
@@ -149,7 +154,14 @@ public class NearbyProductsMapActivity extends AppCompatActivity implements OnMa
         productInfoCard.setVisibility(View.VISIBLE);
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
-        
+        productInfoCard.setOnClickListener(
+                v -> {
+                    Intent i = new Intent(this, DetailProductActivity.class);
+                    i.putExtra(Constant.PRODUCT_PASS_KEY, product);
+                    startActivity(i);
+                }
+
+        );
         if (product.getImage() != null && !product.getImage().isEmpty()) {
             Glide.with(this)
                     .load(product.getImage())
@@ -159,7 +171,7 @@ public class NearbyProductsMapActivity extends AppCompatActivity implements OnMa
         // Calculate and show distance
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation().addOnSuccessListener(location -> {
-                if (location != null && product.getLocation() != null ) {
+                if (location != null && product.getLocation() != null) {
                     float[] results = new float[1];
                     Location.distanceBetween(
                             location.getLatitude(),
