@@ -17,22 +17,26 @@ import java.io.File;
 
 public class UpPostPresenter extends BasePresenter<UpPostView> {
     private ProductRepository productRepository;
+
     protected UpPostPresenter(UpPostView view) {
         super(view);
         productRepository = new ProductRepository();
 
     }
-    public void upPost(Product product){}
-    public void addProduct(Product product){
+
+    public void upPost(Product product) {
+    }
+
+    public void addProduct(Product product) {
         try {
             view.showLoading();
-            if(product.getLocation().getAddress().isEmpty()){
-                view.showError("Vui lòng chọn địa chỉ");
+
+            if (product.getImage().isEmpty() || product.getDescription().isEmpty() || product.getName().isEmpty() || product.getType().isEmpty() || product.getCount() == -1 || product.getUnit().isEmpty()) {
+                view.showError("Vui lòng điền đầy đủ và chọn ảnh");
                 return;
             }
-            if(product.getImage().isEmpty()||product.getDescription().isEmpty()||product.getName().isEmpty()||product.getType().isEmpty()||product.getCount()==-1||product.getUnit().isEmpty())
-            {
-                view.showError("Vui lòng điền đầy đủ và chọn ảnh");
+            if (product.getLocation().getAddress().isEmpty()) {
+                view.showError("Vui lòng chọn địa chỉ");
                 return;
             }
             productRepository.addProduct(product.toMap(), new SafeCallback<String>() {
@@ -40,7 +44,7 @@ public class UpPostPresenter extends BasePresenter<UpPostView> {
                 public void handleSuccess(String productId) {
                     product.setId(productId);
                     File file = FileUtils.uriToFile(view.getContext(), Uri.parse(product.getImage()));
-                    ImageRepository.uploadUrlFile(file, productId,new SafeCallback<String>() {
+                    ImageRepository.uploadUrlFile(file, productId, new SafeCallback<String>() {
                         @Override
                         public void handleSuccess(String url) {
                             product.setImage(url);
@@ -70,8 +74,6 @@ public class UpPostPresenter extends BasePresenter<UpPostView> {
                     view.showError(error);
                 }
             });
-
-
 
 
         } catch (Exception e) {

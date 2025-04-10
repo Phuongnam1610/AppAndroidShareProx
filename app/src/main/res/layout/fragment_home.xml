@@ -31,7 +31,7 @@
         <Button
             android:id="@+id/btnReceive"
             style="@style/btnSecondaryMedium"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:text="Nhận đồ cũ" />
 
         <Button

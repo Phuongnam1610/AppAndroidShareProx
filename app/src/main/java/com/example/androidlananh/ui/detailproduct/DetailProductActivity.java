@@ -90,6 +90,7 @@ public class DetailProductActivity extends BaseActivity<DetailProductPresenter> 
         if(product.getImage()!=null||!product.getImage().isEmpty()){
             Glide.with(this).load(product.getImage()).into(binding.imvProduct);
         }
+        binding.tvAddress.setText(product.getLocation().getAddress());
 
     }
 

@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
+    android:background="@drawable/bggradient2"
     android:padding="@dimen/_10sdp"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-
-        android:padding="@dimen/_10sdp"
+        android:background="@drawable/bggradient2"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,111 +34,128 @@
                 />
 
         </RelativeLayout>
-
-        <LinearLayout
-            android:layout_marginVertical="@dimen/_20sdp"
-            android:orientation="horizontal"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                style="@style/btnSecondaryMedium"
-                android:layout_weight="1"
-                android:id="@+id/btnShare"
-                android:text="Cần chia sẻ"/>
-            <Button
-                android:layout_weight="1"
-                android:id="@+id/btnReceive"
-                style="@style/btnSecondaryMedium"
-                android:text="Nhận chia sẻ"/>
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/bggradient2"
+                android:padding="@dimen/_10sdp"
+                android:layout_height="match_parent">
 
-        </LinearLayout>
-        <TextView
-            style="@style/TitleMedium"
-            android:text="Hôm nay bạn muốn chia sẻ gì"
-            android:layout_centerInParent="true"
-            />
-        <EditText
-            android:id="@+id/edtName"
-            style="@style/edtstyle"
-            android:hint="Nhập tên sản phẩm"  />
+                <LinearLayout
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        style="@style/btnSecondaryMedium"
+                        android:layout_weight="1"
+                        android:id="@+id/btnShare"
+                        android:text="Cần chia sẻ"/>
+                    <Button
+                        android:layout_weight="1"
+                        android:id="@+id/btnReceive"
+                        style="@style/btnSecondaryMedium"
+                        android:text="Nhận chia sẻ"/>
 
-        <EditText
-            android:id="@+id/edtDescription"
-            style="@style/edtstyle"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:hint="Nhập mô tả sản phẩm"
-            android:layout_height="@dimen/_100sdp"
-            android:inputType="text"
-            android:gravity="start"
-            android:padding="@dimen/_20sdp"/>
-        <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_alignParentStart="true"
-                android:id="@+id/tvAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <Button
-                android:id="@+id/btnPickAddress"
-                android:layout_alignParentEnd="true"
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="wrap_content"/>
-        </RelativeLayout>
+                </LinearLayout>
+                <TextView
+                    style="@style/TitleMedium"
+                    android:text="Hôm nay bạn muốn chia sẻ gì"
+                    android:layout_centerInParent="true"
+                    />
+                <EditText
+                    android:id="@+id/edtName"
+                    style="@style/edtstyle"
+                    android:hint="Nhập tên sản phẩm"  />
 
-        <TextView
-            style="@style/TitleMedium"
-            android:text="Ảnh sản phẩm"
-            android:layout_centerInParent="true"
-            />
+                <EditText
+                    android:id="@+id/edtDescription"
+                    style="@style/edtstyle"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:hint="Nhập mô tả sản phẩm"
+                    android:layout_height="@dimen/_100sdp"
+                    android:inputType="text"
+                    android:gravity="start"
+                    android:padding="@dimen/_20sdp"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/tvAddress"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:layout_gravity="center"
-            android:id="@+id/imvProduct"
-            android:src="@drawable/defaultava"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_150sdp"/>
-        <LinearLayout
-            android:layout_marginTop="@dimen/_20sdp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                style="@style/TitleMedium"
-                android:text="Số lượng"
-                android:layout_centerInParent="true"
-                />
-            <EditText
-                android:id="@+id/edtNumber"
-                style="@style/edtstyle"
-                android:hint="Nhập số lượng"
-                android:inputType="number"
-                android:gravity="start"
+                    <Button
+                        android:layout_gravity="top"
+                        android:id="@+id/btnPickAddress"
+                        style="@style/btnSecondaryMedium"
+                        android:layout_width="@dimen/_100sdp"
+                        android:text="Chọn địa chỉ"/>
+                </LinearLayout>
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                style="@style/TitleMedium"
-                android:text="Đơn vị"
-                android:layout_centerInParent="true"
-                />
-            <EditText
-                android:id="@+id/edtUnit"
-                style="@style/edtstyle"
-                android:hint="Nhập đơn vị"
-                android:inputType="text"
-                android:gravity="start"
-                />
+                <TextView
+                    style="@style/TitleMedium"
+                    android:text="Ảnh sản phẩm"
+                    android:layout_centerInParent="true"
+                    />
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:id="@+id/imvProduct"
+                    android:src="@drawable/defaultava"
+                    android:scaleType="centerCrop"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_150sdp"/>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/TitleMedium"
+                        android:text="Số lượng"
+                        android:layout_centerInParent="true"
+                        />
+                    <EditText
+                        android:id="@+id/edtNumber"
+                        style="@style/edtstyle"
+                        android:hint="Nhập số lượng"
+                        android:inputType="number"
+                        android:gravity="start"
+
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/TitleMedium"
+                        android:text="Đơn vị"
+                        android:layout_centerInParent="true"
+                        />
+                    <EditText
+                        android:id="@+id/edtUnit"
+                        style="@style/edtstyle"
+                        android:hint="Nhập đơn vị"
+                        android:inputType="text"
+                        android:gravity="start"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
     </LinearLayout>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
