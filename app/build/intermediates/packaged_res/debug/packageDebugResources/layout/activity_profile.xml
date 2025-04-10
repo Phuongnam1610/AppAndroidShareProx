@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/_10sdp"
-    android:background="@drawable/bggradient2"
 >
     <RelativeLayout
         android:layout_width="match_parent"
