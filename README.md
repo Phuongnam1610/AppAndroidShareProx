@@ -9,6 +9,7 @@
   <li>- Kotlin</li>
   <li>- Firebase Authentication, Firebase Cloud Message, ImageKit</li>
   <li>- Firebase Firestore</li>
+    <li>- Openstreetmap</li>
 </ul>
 
 <div style="text-align: center;">
