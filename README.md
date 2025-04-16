@@ -13,7 +13,8 @@
 </ul>
 
 <div style="text-align: center;">
-    <img width="794" alt="image" src="https://github.com/user-attachments/assets/bea28c60-8f46-433d-80e2-be51f70b6b03">
+    <img width="828" alt="{3A85000E-F46B-405B-BF19-D568908F4A41}" src="https://github.com/user-attachments/assets/5781023d-b631-4dbc-805a-44ee6d061854" />
+
   <img width="784" alt="{62D08BF1-EB2C-4C12-BC93-FAF865E0B897}" src="https://github.com/user-attachments/assets/88101cda-d1e0-4c66-addf-8512163f4c5a" />
 
 </div>
