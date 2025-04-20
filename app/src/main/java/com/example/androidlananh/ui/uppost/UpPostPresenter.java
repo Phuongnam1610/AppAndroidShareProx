@@ -59,6 +59,7 @@ public class UpPostPresenter extends BasePresenter<UpPostView> {
             productRepository.addProduct(product.toMap(), new SafeCallback<String>() {
                 @Override
                 public void handleSuccess(String productId) {
+                    product.setId(productId);
                     if (product.getType().equals(Constant.TYPE_SHARE)) {
                         File file = FileUtils.uriToFile(view.getContext(), Uri.parse(product.getImage()));
                         ImageRepository.uploadUrlFile(file, productId, new SafeCallback<String>() {
@@ -99,7 +100,7 @@ public class UpPostPresenter extends BasePresenter<UpPostView> {
 
 
         } catch (Exception e) {
-            Log.e("UpdateProfileError", "Error updating profile", e);
+            Log.e("uppost", "Error updating profile", e);
 
             view.showError(e.getMessage() != null ? e.getMessage() : "Đã xảy ra lỗi. Vui lòng thử lại.");
 
