@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.androidlananh.R;
+import com.example.androidlananh.databinding.ActivityNearbyProductsMapBinding;
 import com.example.androidlananh.model.Product;
 import com.example.androidlananh.repository.ApiCallback;
 import com.example.androidlananh.repository.ProductRepository;
@@ -45,18 +47,23 @@ public class NearProductMapActivity extends AppCompatActivity implements OnMapRe
     private ImageView productImage;
     private TextView productName, productDescription, productDistance;
     private Map<Marker, Product> markerProductMap;
+    private ActivityNearbyProductsMapBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nearby_products_map);
+        binding=ActivityNearbyProductsMapBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
 
         productRepository = new ProductRepository();
         markerProductMap = new HashMap<>();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
+        binding.btnBack.setOnClickListener(v -> {
+            finish();
+        });
         initializeViews();
         setupMap();
+
     }
 
     private void initializeViews() {

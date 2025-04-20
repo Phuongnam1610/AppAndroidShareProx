@@ -1,49 +1,61 @@
 package com.example.androidlananh.adapter;
 
-import android.content.Context;
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.androidlananh.R;
 import com.example.androidlananh.databinding.ItemProductBinding;
 import com.example.androidlananh.model.Product;
 import com.example.androidlananh.ui.base.BaseView;
+import com.example.androidlananh.utils.Constant;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
-    private ProductAdapterView view;
-    private ArrayList<Product> originalList=new ArrayList<>();
-    private ArrayList<Product> filteredList=new ArrayList<>();
-    public ProductAdapter(ProductAdapterView view) {
-        this.view=view;
+    private ProductAdapterListener view;
+    private ArrayList<Product> originalList = new ArrayList<>();
+    private ArrayList<Product> filteredList = new ArrayList<>();
+
+    public ProductAdapter(ProductAdapterListener view) {
+        this.view = view;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        ItemProductBinding binding = ItemProductBinding.inflate(LayoutInflater.from(view.getContext()));
+        ItemProductBinding binding = ItemProductBinding.inflate(LayoutInflater.from(((BaseView) view).getContext()));
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Product product = filteredList.get(position);
+        try {
+            Product product = filteredList.get(position);
 //        holder.binding.imvProduct=
-        holder.binding.tvNameProduct.setText(product.getName());
-        holder.binding.getRoot().setOnClickListener(v -> {
-            view.onClickProduct(product);
-        });
-        Glide.with(view.getContext()).load(product.getImage()).into(holder.binding.imvProduct);
+            holder.binding.tvNameProduct.setText(product.getName());
+            holder.binding.getRoot().setOnClickListener(v -> {
+                view.onClickProduct(product);
+            });
+            if (product.getType().equals(Constant.TYPE_SHARE)) {
+                holder.binding.imvProduct.setVisibility(VISIBLE);
+                holder.binding.tvReason.setVisibility(GONE);
+                Glide.with(((BaseView) view).getContext()).load(product.getImage()).into(holder.binding.imvProduct);
+
+            } else {
+                holder.binding.tvReason.setVisibility(VISIBLE);
+                holder.binding.imvProduct.setVisibility(GONE);
+                holder.binding.tvReason.setText(product.getReason());
+            }
+        } catch (Exception e) {
+
+        }
     }
 
     @Override
@@ -64,8 +76,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     }
 
     public void filterList(String searchKey) {
-        if(searchKey.isEmpty()){
-            filteredList=new ArrayList<>(originalList);
+        if (searchKey.isEmpty()) {
+            filteredList = new ArrayList<>(originalList);
             return;
         }
         ArrayList<Product> filterList = new ArrayList<>();
@@ -80,8 +92,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     }
 
 
-
-    public void  loadAllProduct(ArrayList<Product> newList) {
+    public void loadAllProduct(ArrayList<Product> newList) {
         originalList.clear();
         originalList.addAll(newList);
         filteredList.clear();

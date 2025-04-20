@@ -20,12 +20,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.airbnb.lottie.L;
 import com.example.androidlananh.databinding.ActivityUpPostBinding;
+import com.example.androidlananh.model.Category;
 import com.example.androidlananh.model.Product;
 import com.example.androidlananh.model.Location;
 import com.example.androidlananh.ui.base.BaseActivity;
 import com.example.androidlananh.ui.picklocation.LocationSearchActivity;
 import com.example.androidlananh.utils.Constant;
 import com.example.androidlananh.utils.SessionManager;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpPostView {
     private ActivityUpPostBinding binding;
@@ -34,6 +43,8 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
     private Uri selectedImageUri;
     private Location location = new Location("", 0, 0);
     private String type = "";
+
+    private String categoryId="";
 
     private void setupLocationPicker() {
         locationPickerLauncher = registerForActivityResult(
@@ -92,7 +103,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
         setupLocationPicker();
         setupOnClick();
         setupTypePost();
-
+        presenter.getAllCategory();
 
     }
 
@@ -109,28 +120,35 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
             } catch (Exception e) {
             }
             String unit = binding.edtUnit.getText().toString();
+            String reason=binding.edtReason.getContext().toString();
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);
             product.setAuthorID(SessionManager.getInstance().getCurrentUser().getId());
             product.setType(type);
             product.setLocation(location);
+            product.setCategoryId(categoryId);
             if (selectedImageUri != null) {
                 product.setImage(String.valueOf(selectedImageUri));
             }
             product.setCount(count);
             product.setUnit(unit);
+            product.setReason(reason);
             presenter.addProduct(product);
         });
         binding.btnShare.setOnClickListener(v -> {
             type = Constant.TYPE_SHARE;
             binding.btnShare.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
             binding.btnReceive.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+            binding.frameImage.setVisibility(VISIBLE);
+            binding.frameReason.setVisibility(GONE);
         });
         binding.btnReceive.setOnClickListener(v -> {
             type = Constant.TYPE_RECEIVE;
             binding.btnReceive.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
             binding.btnShare.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+            binding.frameImage.setVisibility(GONE);
+            binding.frameReason.setVisibility(VISIBLE);
         });
         binding.imvProduct.setOnClickListener(v -> {
             openImagePicker();
@@ -147,21 +165,17 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
                 binding.btnReceive.performClick();
                 binding.btnShare.setVisibility(GONE);
             } else if (type.equals(Constant.TYPE_SHARE)) {
-                binding.btnShare.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
-                binding.btnReceive.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+
+                binding.btnShare.performClick();
+                binding.btnReceive.setVisibility(GONE);
             }
+        }
+        else{
+            type="";
         }
 
     }
 
-    private void Mocktest() {
-        binding.edtName.setText("dsfsdf");
-        type = Constant.TYPE_RECEIVE;
-        binding.edtNumber.setText("3");
-        binding.edtUnit.setText("hoa");
-        selectedImageUri = Uri.parse("content://media/external/images/media/39");
-        binding.edtDescription.setText("ádas");
-    }
 
     private void initializeViewBinding() {
         binding = ActivityUpPostBinding.inflate(getLayoutInflater());
@@ -208,5 +222,50 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
     @Override
     public void displayImageUri(Uri uri) {
         binding.imvProduct.setImageURI(uri);
+    }
+
+    @Override
+    public void getAllCategories(ArrayList<Category> categories) {
+
+        ArrayAdapter<Category> adapter = new ArrayAdapter<Category>(this, android.R.layout.simple_spinner_item, categories) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                text.setText(getItem(position).getTitle());
+                return view;
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView, ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                text.setText(getItem(position).getTitle());
+                return view;
+            }
+        };
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.spinnerCategory.setAdapter(adapter);
+        int indexDefault = 0;
+
+        for (int i = 0; i < categories.size(); i++) {
+            if (categories.get(i).getId().equalsIgnoreCase("khongro")) {
+                indexDefault = i;
+                break;
+            }
+        }
+        binding.spinnerCategory.setSelection(indexDefault);
+        binding.spinnerCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Category selectedCategory = (Category) parent.getItemAtPosition(position);
+                categoryId= selectedCategory.getId();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                categoryId = "";
+            }
+        });
     }
 }

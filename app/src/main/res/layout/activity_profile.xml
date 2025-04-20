@@ -77,7 +77,7 @@
                         android:id="@+id/edtPassword"
                         style="@style/edtstyle"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:hint="Mật khẩu"
+                        android:hint="Mật khẩu không bắt buộc"
                         android:inputType="textPassword" />
                     <EditText
                         android:id="@+id/edtRepassword"

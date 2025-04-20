@@ -96,6 +96,8 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
         binding.btnUpdate.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString();
             String userName = binding.edtUserName.getText().toString();
+            String password=binding.edtPassword.getText().toString();
+            String rePassword=binding.edtRepassword.getText().toString();
 
             currentUser.setId(currentUser.getId());
             currentUser.setEmail(email);
@@ -104,7 +106,7 @@ public class ProfileActivity extends BaseActivity<ProfilePresenter> implements P
                 currentUser.setImageAvatar(selectedImageUri.toString());
             }
 
-            presenter.updateProfile(currentUser);
+            presenter.updateProfileAndPassword(currentUser,password,rePassword);
         });
     }
 

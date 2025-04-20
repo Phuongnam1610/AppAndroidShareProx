@@ -16,6 +16,26 @@ public class Product implements Serializable {
     private String unit="";
     private Location location;
 
+    private String categoryId="";
+    private String reason="";
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public Location getLocation() {
         return location;
     }
@@ -56,14 +76,14 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    private String authorID;
+    private String authorId;
 
     public String getAuthorID() {
-        return authorID;
+        return authorId;
     }
 
     public void setAuthorID(String authorID) {
-        this.authorID = authorID;
+        this.authorId = authorID;
     }
 
     public String getImage() {
@@ -100,14 +120,15 @@ public class Product implements Serializable {
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
-        map.put("id", id);
         map.put("image", image);
         map.put("name", name);
         map.put("description", description);
         map.put("type", type);
         map.put("count", count);
         map.put("unit", unit);
-        map.put("authorID", authorID);
+        map.put("authorId", authorId);
+        map.put("categoryId",categoryId);
+        map.put("reason",reason);
         if (location != null) {
             Map<String, Object> locationMap = location.toMap();
             map.put("location", locationMap);
@@ -118,14 +139,15 @@ public class Product implements Serializable {
     public static Product fromDocument(DocumentSnapshot document) {
         if (document == null) return null;
         Product product = new Product();
-        product.setId(document.getString("id"));
         product.setImage(document.getString("image"));
         product.setName(document.getString("name"));
         product.setDescription(document.getString("description"));
         product.setType(document.getString("type"));
         product.setCount(document.getLong("count") != null ? document.getLong("count").intValue() : -1);
         product.setUnit(document.getString("unit"));
-        product.setAuthorID(document.getString("authorID"));
+        product.setAuthorID(document.getString("authorId"));
+        product.setCategoryId(document.getString("categoryId"));
+        product.setReason(document.getString("reason"));
         
         // Get location data
         Map<String, Object> locationMap = (Map<String, Object>) document.get("location");

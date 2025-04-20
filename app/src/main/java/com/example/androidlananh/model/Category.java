@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Category implements Serializable {
     private String id="";
-    private String image="";
+    private String img="";
     private String title="";
 
     public String getId() {
@@ -15,12 +15,12 @@ public class Category implements Serializable {
         this.id = id;
     }
 
-    public String getImage() {
-        return image;
+    public String getImg() {
+        return img;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getTitle() {
@@ -31,9 +31,11 @@ public class Category implements Serializable {
         this.title = title;
     }
 
-    public Category(String id, String image, String title) {
+    public Category(){}
+
+    public Category(String id, String img, String title) {
         this.id = id;
-        this.image = image;
+        this.img = img;
         this.title = title;
     }
 }

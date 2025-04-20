@@ -80,6 +80,22 @@ public class SessionManager {
                 });
     }
 
+    public void updatePassword(String newPassword,ApiCallback<Boolean> listener){
+        getAuthUser().updatePassword(newPassword).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                listener.onSuccess(true);
+
+            }
+
+
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                listener.onError(e.getMessage());
+            }
+        });
+    }
+
     public void signOut() {
         auth.signOut();
         currentUser = null;

@@ -1,8 +1,8 @@
 package com.example.androidlananh.ui.picklocation;
 
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import com.example.androidlananh.model.Location;
 import com.example.androidlananh.ui.base.BasePresenter;
@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -25,35 +24,33 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class LocationSearchPresenter extends BasePresenter<LocationSearchView> {
-    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final ExecutorService executor = Executors.newFixedThreadPool(2);
     private final Handler handler = new Handler(Looper.getMainLooper());
+    // Add tracking variables
+    private Runnable currentSearchTask;
+    private Runnable currentReverseGeocodingTask;
 
     protected LocationSearchPresenter(LocationSearchView view) {
         super(view);
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (executor != null && !executor.isShutdown()) {
-            executor.shutdown();
-        }
-        if (handler != null) {
-            handler.removeCallbacksAndMessages(null);
-        }
-    }
+
 
     public void searchLocations(String query) {
-        executor.execute(() -> {
+        // Cancel previous search if exists
+        if (currentSearchTask != null) {
+            handler.removeCallbacks(currentSearchTask);
+        }
+
+        Runnable searchTask = () -> {
             try {
                 String encodedQuery = URLEncoder.encode(query, "UTF-8");
                 URL url = new URL("https://nominatim.openstreetmap.org/search?format=json&q=" + encodedQuery);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("User-Agent", "AndroidApp");
-
                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder response = new StringBuilder();
+                Log.d("responseSearch",reader.toString());
                 String line;
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
@@ -70,33 +67,49 @@ public class LocationSearchPresenter extends BasePresenter<LocationSearchView> {
                     ));
                 }
 
-                handler.post(() -> {
-                    try {
-                        view.searchLocationSuccess(Locations);
-                    } catch (Exception e) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.d("location",Locations.toString());
+                            view.searchLocationSuccess(Locations);
+                        } catch (Exception e) {
 
-                    }
+                        }                    }
                 });
+
 
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                currentSearchTask = null;
             }
-        });
+        };
+
+        currentSearchTask = searchTask;
+        executor.execute(searchTask);
     }
 
     public void showLocationAddress(GeoPoint point) {
+        // Cancel previous reverse geocoding if exists
+        if (currentReverseGeocodingTask != null) {
+            handler.removeCallbacks(currentReverseGeocodingTask);
+        }
+
         LatLng latLng = new LatLng(point.getLatitude(), point.getLongitude());
         view.updateMapCameraView(latLng);
-        // Get address from coordinates
-        executor.execute(() -> {
+
+        Runnable reverseGeocodingTask = () -> {
             try {
                 URL url = new URL("https://nominatim.openstreetmap.org/reverse?format=json&lat=" +
                         point.getLatitude() + "&lon=" + point.getLongitude());
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("User-Agent", "AndroidApp");
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                Log.d("responseShow",reader.toString());
+
                 StringBuilder response = new StringBuilder();
+
                 String line;
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
@@ -105,21 +118,46 @@ public class LocationSearchPresenter extends BasePresenter<LocationSearchView> {
                 JSONObject result = new JSONObject(response.toString());
                 String address = result.getString("display_name");
                 Location Location = new Location(address, point.getLatitude(), point.getLongitude());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.d("address",address);
+                            view.showLocationAddress(Location);
+                        } catch (Exception e) {
 
-                handler.post(() -> {
-                    try {
-                        view.showLocationAddress(Location);
-                    } catch (Exception e) {
-
-                    }
+                        }                    }
                 });
+
 
             } catch (Exception e) {
                 e.printStackTrace();
-
+            } finally {
+                currentReverseGeocodingTask = null;
             }
-        });
+        };
+
+        currentReverseGeocodingTask = reverseGeocodingTask;
+        executor.execute(reverseGeocodingTask);
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Cancel ongoing tasks
+        if (currentSearchTask != null) {
+            handler.removeCallbacks(currentSearchTask);
+            currentSearchTask = null;
+        }
+        if (currentReverseGeocodingTask != null) {
+            handler.removeCallbacks(currentReverseGeocodingTask);
+            currentReverseGeocodingTask = null;
+        }
+        if (executor != null && !executor.isShutdown()) {
+            executor.shutdown();
+        }
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
+    }
 }
