@@ -43,6 +43,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             holder.binding.getRoot().setOnClickListener(v -> {
                 view.onClickProduct(product);
             });
+            holder.binding.getRoot().setOnLongClickListener(v->{
+                view.onLongClickProduct(product);
+                return false;
+            });
             if (product.getType().equals(Constant.TYPE_SHARE)) {
                 holder.binding.imvProduct.setVisibility(VISIBLE);
                 holder.binding.tvReason.setVisibility(GONE);
@@ -62,6 +66,31 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public int getItemCount() {
 
         return filteredList.size();
+    }
+
+    public void deleteProduct(String id) {
+        // Find position in original list
+        int position = -1;
+        for (int i = 0; i < originalList.size(); i++) {
+            if (originalList.get(i).getId().equals(id)) {
+                position = i;
+                break;
+            }
+        }
+        
+        if (position != -1) {
+            // Remove from original list
+            originalList.remove(position);
+            
+            // Find and remove from filtered list
+            for (int i = 0; i < filteredList.size(); i++) {
+                if (filteredList.get(i).getId().equals(id)) {
+                    filteredList.remove(i);
+                    notifyItemRemoved(i);
+                    break;
+                }
+            }
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

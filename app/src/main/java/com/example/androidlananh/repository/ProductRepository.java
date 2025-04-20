@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.androidlananh.model.Product;
+import com.example.androidlananh.utils.SafeCallback;
 import com.firebase.geofire.GeoFireUtils;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQueryBounds;
@@ -171,6 +172,17 @@ public class ProductRepository {
                         listener.onSuccess(products);
 
                     }
+                });
+    }
+
+    public void deleteProduct(String productId,final SafeCallback<String> listener){
+        db.collection("Product")
+                .document(productId).delete()
+                .addOnSuccessListener(documentReference -> {
+                    listener.onSuccess(productId);
+                })
+                .addOnFailureListener(e -> {
+                    listener.onError(e.getMessage());
                 });
     }
 

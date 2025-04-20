@@ -135,4 +135,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         productAdapter.loadAllProduct(products);
 
     }
+
+    @Override
+    public void onLongClickProduct(Product product) {
+
+    }
 }

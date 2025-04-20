@@ -117,4 +117,9 @@ public class DetailCategoryActivity extends BaseActivity<DetailCategoryPresenter
         productAdapter.loadAllProduct(products);
 
     }
+
+    @Override
+    public void onLongClickProduct(Product product) {
+
+    }
 }
