@@ -1,6 +1,10 @@
 
 package com.example.androidlananh.ui.fragments.user;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,6 +28,7 @@ import com.example.androidlananh.utils.Constant;
 import com.example.androidlananh.utils.SessionManager;
 
 import java.util.ArrayList;
+
 
 public class UserFragment extends BaseFragment<UserPresenter> implements UserView {
     private FragmentUserBinding binding;
@@ -66,11 +71,14 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserVie
 
     @Override
     public void showLoading() {
-
+    binding.animationView.setVisibility(VISIBLE);
+    binding.rcvPost.setVisibility(GONE);
     }
 
     @Override
     public void hideLoading() {
+        binding.animationView.setVisibility(GONE);
+        binding.rcvPost.setVisibility(VISIBLE);
 
     }
 
@@ -87,6 +95,11 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserVie
             Glide.with(this)
                     .load(user.getImageAvatar())
                     .into(binding.imguser);        }
+    }
+
+    @Override
+    public void deleteProduct(String productId) {
+
     }
 
     @Override
@@ -107,4 +120,16 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserVie
         productAdapter.loadAllProduct(products);
     }
 
+    @Override
+    public void onLongClickProduct(Product product) {
+        new AlertDialog.Builder(getContext())
+                .setTitle("Xóa sản phẩm")
+                .setMessage("Bạn có chắc chắn muốn xóa sản phẩm?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    presenter.deleteProduct(product.getId());
+                    productAdapter.deleteProduct(product.getId());
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
 }

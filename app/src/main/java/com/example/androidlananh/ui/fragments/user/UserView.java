@@ -8,4 +8,6 @@ public interface UserView extends BaseView, ProductAdapterListener {
     void navigateToSignInActivity();
     void displayUserData(User user);
 
+    void deleteProduct(String productId);
+
 }

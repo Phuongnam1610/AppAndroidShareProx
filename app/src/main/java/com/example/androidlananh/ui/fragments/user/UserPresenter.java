@@ -28,12 +28,37 @@ public class UserPresenter extends BasePresenter<UserView> {
                 @Override
                 public void handleSuccess(ArrayList<Product> products) {
                     view.displayAllProduct(products);
+                    view.hideLoading();
                 }
 
                 @Override
                 public void handleError(String error) {
                     view.showError(error);
 
+                }
+            });
+
+        } catch (Exception e) {
+            Log.e("UpdateProfileError", "Error updating profile", e);
+
+            view.showError(e.getMessage() != null ? e.getMessage() : "Đã xảy ra lỗi. Vui lòng thử lại.");
+
+        }
+    }
+
+    public void deleteProduct(String productId) {
+        try {
+            view.showLoading();
+            productRepository.deleteProduct(productId,new SafeCallback<String>() {
+                @Override
+                protected void handleSuccess(String productId) {
+                    view.showError("Xóa sản phẩm thành công");
+                    view.deleteProduct(productId);
+                }
+
+                @Override
+                public void handleError(String error) {
+                    view.showError(error);
                 }
             });
 
