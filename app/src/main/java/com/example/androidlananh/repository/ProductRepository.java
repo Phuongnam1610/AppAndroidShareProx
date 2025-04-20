@@ -93,7 +93,7 @@ public class ProductRepository {
 
     public void getAllProductByAuthorId(String authorId, final ApiCallback<ArrayList<Product>> listener) {
         db.collection("Product")
-                .whereEqualTo("authorID", authorId)
+                .whereEqualTo("authorId", authorId)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     ArrayList<Product> products = new ArrayList<>();
@@ -111,6 +111,25 @@ public class ProductRepository {
                 });
     }
 
+    public void getAllProductByCategoryid(String categoryId, final ApiCallback<ArrayList<Product>> listener) {
+        db.collection("Product")
+                .whereEqualTo("categoryId", categoryId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    ArrayList<Product> products = new ArrayList<>();
+                    for (DocumentSnapshot document : queryDocumentSnapshots) {
+                        Product product = document.toObject(Product.class);
+                        if (product != null) {
+                            product.setId(document.getId());
+                            products.add(product);
+                        }
+                    }
+                    listener.onSuccess(products);
+                })
+                .addOnFailureListener(e -> {
+                    listener.onError(e.getMessage());
+                });
+    }
     public void getNearbyProducts(double latitude, double longitude, double radiusInKm, final ApiCallback<ArrayList<Product>> listener) {
         final double radiusInM = radiusInKm * 1000;
         final GeoLocation center = new GeoLocation(latitude, longitude);

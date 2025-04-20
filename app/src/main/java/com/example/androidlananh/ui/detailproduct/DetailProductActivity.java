@@ -1,5 +1,8 @@
 package com.example.androidlananh.ui.detailproduct;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,8 +90,17 @@ public class DetailProductActivity extends BaseActivity<DetailProductPresenter> 
     public void displayProduct(Product product) {
         binding.tvName.setText(product.getName());
         binding.tvDescription.setText(product.getDescription());
+        if(product.getType().equals(Constant.TYPE_SHARE)){
         if(product.getImage()!=null||!product.getImage().isEmpty()){
             Glide.with(this).load(product.getImage()).into(binding.imvProduct);
+        }
+        binding.imvProduct.setVisibility(VISIBLE);
+        binding.tvReason.setVisibility(GONE);
+        }
+        else{
+            binding.imvProduct.setVisibility(GONE);
+            binding.tvReason.setVisibility(VISIBLE);
+            binding.tvReason.setText(product.getReason());
         }
         binding.tvAddress.setText(product.getLocation().getAddress());
 

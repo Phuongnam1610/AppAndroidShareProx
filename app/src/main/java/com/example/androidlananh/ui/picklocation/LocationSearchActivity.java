@@ -53,6 +53,7 @@ public class LocationSearchActivity extends BaseActivity<LocationSearchPresenter
 
     private CustomSearchAdapter searchAdapter;  // Change this line
     private Location location;
+    private LatLng currentLatLng;
     Handler searchHandler = new Handler(Looper.getMainLooper());
     Runnable searchRunnable = new Runnable() {
         @Override
@@ -167,7 +168,7 @@ public class LocationSearchActivity extends BaseActivity<LocationSearchPresenter
             public void afterTextChanged(Editable s) {
                 searchAdapter.getFilter().filter(s);
                 searchHandler.removeCallbacks(searchRunnable);
-                searchHandler.postDelayed(searchRunnable, 1000); // 1 second delay
+                searchHandler.postDelayed(searchRunnable, 2000); // 1 second delay
             }
         });
 
@@ -177,9 +178,13 @@ public class LocationSearchActivity extends BaseActivity<LocationSearchPresenter
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnCameraIdleListener(() -> {
-            LatLng center = mMap.getCameraPosition().target;
-            showLocationPoint(new GeoPoint(center.latitude, center.longitude));
-            presenter.showLocationAddress(new GeoPoint(center.latitude, center.longitude));
+            if(currentLatLng!=null){
+                if(currentLatLng.equals(mMap.getCameraPosition().target)){
+                    return;
+                }
+            }
+            currentLatLng = mMap.getCameraPosition().target;
+            presenter.showLocationAddress(new GeoPoint(currentLatLng.latitude, currentLatLng.longitude));
         });
         setupMap();
     }

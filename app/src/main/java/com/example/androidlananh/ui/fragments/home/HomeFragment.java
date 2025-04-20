@@ -1,6 +1,8 @@
 
 package com.example.androidlananh.ui.fragments.home;
 
+import static android.widget.GridLayout.HORIZONTAL;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,7 +14,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidlananh.adapter.CategoryAdapter;
+import com.example.androidlananh.model.Category;
+import com.example.androidlananh.ui.detailcategory.DetailCategoryActivity;
 import com.example.androidlananh.ui.nearproduct.NearProductMapActivity;
 import com.example.androidlananh.adapter.ProductAdapter;
 import com.example.androidlananh.databinding.FragmentHomeBinding;
@@ -24,10 +30,10 @@ import com.example.androidlananh.utils.Constant;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends BaseFragment<HomePresenter> implements HomeView {
+public class HomeFragment extends BaseFragment<HomePresenter> implements HomeView{
     private FragmentHomeBinding binding;
     private ProductAdapter productAdapter;
-
+    private CategoryAdapter categoryAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,11 +47,15 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         productAdapter = new ProductAdapter(this);
         binding.rcvPost.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.rcvPost.setAdapter(productAdapter);
+        categoryAdapter= new CategoryAdapter(this);
+        binding.rcvCategory.setLayoutManager(new GridLayoutManager(getContext(), 2, RecyclerView.HORIZONTAL,false));
+        binding.rcvCategory.setAdapter(categoryAdapter);
+        presenter.getAllProduct();
+        presenter.getAllCategory();
         setupOnClick();
         return binding.getRoot();
     }
     private void setupOnClick(){
-        presenter.getAllProduct();
         binding.btnReceive.setOnClickListener(v -> {
             startActivity(new Intent(getContext(), UpPostActivity.class).putExtra(Constant.TYPE_PASS_KEY, Constant.TYPE_RECEIVE));
         });
@@ -91,6 +101,28 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
 
     }
 
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+
+
+    @Override
+    public void onClickCategory(Category category) {
+        Intent i = new Intent(getContext(), DetailCategoryActivity.class);
+        i.putExtra(Constant.CATEGORY_PASS_KEY,category);
+        startActivity(i);
+    }
+
+    @Override
+    public void displayAllCategory(ArrayList<Category> categories) {
+            categoryAdapter.loadAllCategory(categories);
+    }
+
     @Override
     public void onClickProduct(Product product) {
         Intent i = new Intent(getContext(), DetailProductActivity.class);
@@ -101,11 +133,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     @Override
     public void displayAllProduct(ArrayList<Product> products) {
         productAdapter.loadAllProduct(products);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
 
     }
 }

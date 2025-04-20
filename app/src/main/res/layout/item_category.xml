@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/_150sdp"
+    android:layout_width="@dimen/_70sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_5sdp"
-    android:layout_height="@dimen/_160sdp">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="@dimen/_100sdp">
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
+        <androidx.cardview.widget.CardView
                 app:cardCornerRadius="@dimen/_50sdp"
 
                 android:layout_gravity="center"
@@ -19,21 +16,22 @@
                 <ImageView
                     android:id="@+id/imvCategory"
                     android:src="@drawable/defaultava"
-                    android:layout_width="@dimen/_130sdp"
+                    android:layout_width="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:layout_height="@dimen/_130sdp"/>
-            </androidx.cardview.widget.CardView>
+                    android:layout_height="@dimen/_50sdp"/>
+        </androidx.cardview.widget.CardView>
 
             <TextView
                 style="@style/textPrimaryMedium"
                 android:gravity="center"
                 android:id="@+id/tvNameCategory"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:text="Bánh sinh nhật"
+                android:text="Thú cưng"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:lines="2"
                 />
-        </LinearLayout>
 
 
 </LinearLayout>

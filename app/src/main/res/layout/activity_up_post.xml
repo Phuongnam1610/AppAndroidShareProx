@@ -65,7 +65,20 @@
                     style="@style/TitleMedium"
                     android:text="Hôm nay bạn muốn chia sẻ gì"
                     android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     />
+                <TextView
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    style="@style/TitleMedium"
+                    android:text="Chọn danh mục"
+                    android:layout_centerInParent="true"
+                    />
+                <Spinner
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
                 <EditText
                     android:id="@+id/edtName"
                     style="@style/edtstyle"
@@ -99,21 +112,52 @@
                         android:layout_width="@dimen/_100sdp"
                         android:text="Chọn địa chỉ"/>
                 </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/frameReason"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/TitleMedium"
+                        android:text="Lí do"
+                        android:layout_centerInParent="true"
+                        />
 
-                <TextView
-                    style="@style/TitleMedium"
-                    android:text="Ảnh sản phẩm"
-                    android:layout_centerInParent="true"
-                    />
+                    <EditText
+                        android:id="@+id/edtReason"
+                        style="@style/edtstyle"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:hint="Nhập lí do cần nhận, hoàn cảnh"
+                        android:layout_height="@dimen/_100sdp"
+                        android:inputType="text"
+                        android:gravity="start"
+                        android:padding="@dimen/_20sdp"/>
 
-                <ImageView
-                    android:layout_marginVertical="@dimen/_10sdp"
-                    android:layout_gravity="center"
-                    android:id="@+id/imvProduct"
-                    android:src="@drawable/defaultava"
-                    android:scaleType="centerCrop"
-                    android:layout_width="@dimen/_200sdp"
-                    android:layout_height="@dimen/_150sdp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/frameImage"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/TitleMedium"
+                        android:text="Ảnh sản phẩm"
+                        android:layout_centerInParent="true"
+                        />
+
+                    <ImageView
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:id="@+id/imvProduct"
+                        android:src="@drawable/defaultava"
+                        android:scaleType="centerCrop"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_150sdp"/>
+                </LinearLayout>
+
+
                 <LinearLayout
                     android:layout_marginTop="@dimen/_20sdp"
                     android:orientation="horizontal"

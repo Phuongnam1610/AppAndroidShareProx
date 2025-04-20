@@ -16,15 +16,17 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/defaultava"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/defaultava"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLanAnh"
         tools:targetApi="31">
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="true"></activity>
@@ -34,11 +36,7 @@
         <activity
             android:name=".ui.signin.SignInActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.uppost.UpPostActivity"
@@ -53,13 +51,27 @@
         </activity>
         <activity
             android:name=".ui.picklocation.LocationSearchActivity"
-            android:exported="true">
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".ui.detailcategory.DetailCategoryActivity"
+            android:exported="false">
 
         </activity>
         <activity
             android:name=".ui.nearproduct.NearProductMapActivity"
-            android:exported="true">
+            android:exported="false">
 
+        </activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
