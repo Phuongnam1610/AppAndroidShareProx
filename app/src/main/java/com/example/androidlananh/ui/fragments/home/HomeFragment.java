@@ -48,7 +48,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         binding.rcvPost.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.rcvPost.setAdapter(productAdapter);
         categoryAdapter= new CategoryAdapter(this);
-        binding.rcvCategory.setLayoutManager(new GridLayoutManager(getContext(), 2, RecyclerView.HORIZONTAL,false));
+        binding.rcvCategory.setLayoutManager(new GridLayoutManager(getContext(), 1, RecyclerView.HORIZONTAL,false));
         binding.rcvCategory.setAdapter(categoryAdapter);
         presenter.getAllProduct();
         presenter.getAllCategory();
