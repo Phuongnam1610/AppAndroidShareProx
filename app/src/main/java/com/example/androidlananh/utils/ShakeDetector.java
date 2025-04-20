@@ -11,7 +11,7 @@ public class ShakeDetector implements SensorEventListener {
     private static final int SHAKE_COUNT_THRESHOLD = 4;
     private static final int SHAKE_TIMEOUT = 500;
     private static final int PAUSE_DURATION = 2000; // 2 seconds pause
-    
+
     private OnShakeListener listener;
     private long lastShakeTime;
     private int shakeCount = 0;
@@ -30,10 +30,10 @@ public class ShakeDetector implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         if (listener != null && !isPaused) {
             float x = Math.abs(event.values[0]);
-            
+
             if (x > SHAKE_THRESHOLD_X) {
                 long currentTime = System.currentTimeMillis();
-                
+
                 if (shakeCount == 0) {
                     firstShakeTime = currentTime;
                     shakeCount = 1;
@@ -44,7 +44,7 @@ public class ShakeDetector implements SensorEventListener {
                             listener.onShake();
                             shakeCount = 0;
                             isPaused = true;
-                            
+
                             // Resume after 2 seconds
                             new Handler().postDelayed(new Runnable() {
                                 @Override
