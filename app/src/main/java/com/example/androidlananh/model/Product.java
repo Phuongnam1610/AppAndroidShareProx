@@ -120,15 +120,17 @@ public class Product implements Serializable {
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
-        map.put("image", image);
-        map.put("name", name);
-        map.put("description", description);
-        map.put("type", type);
+        map.put("id",id!=null?id:"");
+        map.put("image", image != null ? image : "");
+        map.put("name", name != null ? name : "");
+        map.put("description", description != null ? description : "");
+        map.put("type", type != null ? type : "");
         map.put("count", count);
-        map.put("unit", unit);
-        map.put("authorId", authorId);
-        map.put("categoryId",categoryId);
-        map.put("reason",reason);
+        map.put("unit", unit != null ? unit : "");
+        map.put("authorId", authorId != null ? authorId : "");
+        map.put("categoryId", categoryId != null ? categoryId : "");
+        map.put("reason", reason != null ? reason : "");
+
         if (location != null) {
             Map<String, Object> locationMap = location.toMap();
             map.put("location", locationMap);
@@ -139,6 +141,7 @@ public class Product implements Serializable {
     public static Product fromDocument(DocumentSnapshot document) {
         if (document == null) return null;
         Product product = new Product();
+
         product.setImage(document.getString("image"));
         product.setName(document.getString("name"));
         product.setDescription(document.getString("description"));

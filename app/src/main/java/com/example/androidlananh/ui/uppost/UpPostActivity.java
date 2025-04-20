@@ -120,7 +120,7 @@ public class UpPostActivity extends BaseActivity<UpPostPresenter> implements UpP
             } catch (Exception e) {
             }
             String unit = binding.edtUnit.getText().toString();
-            String reason=binding.edtReason.getContext().toString();
+            String reason=binding.edtReason.getText().toString();
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);

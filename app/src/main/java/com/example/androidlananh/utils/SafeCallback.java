@@ -11,6 +11,7 @@ public abstract class SafeCallback<T> implements ApiCallback<T> {
         try {
             handleSuccess(data);
         } catch (Exception e) {
+            Log.e("SafeCallback", "Error in error callback", e);
             onError(e.getMessage());
         }
     }
